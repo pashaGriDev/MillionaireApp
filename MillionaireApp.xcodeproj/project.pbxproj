@@ -104,7 +104,7 @@
 		10869E922B8BA0750018D0E9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				AA92B5872B8CC3DD00EDDB44 /* StartScreen */,
+				AA92B5872B8CC3DD00EDDB44 /* Start */,
 				10869E812B8B9EFA0018D0E9 /* ViewController.swift */,
 			);
 			path = UI;
@@ -125,12 +125,12 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		AA92B5872B8CC3DD00EDDB44 /* StartScreen */ = {
+		AA92B5872B8CC3DD00EDDB44 /* Start */ = {
 			isa = PBXGroup;
 			children = (
 				AA92B5882B8CC41A00EDDB44 /* StartScreenViewController.swift */,
 			);
-			path = StartScreen;
+			path = Start;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

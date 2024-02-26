@@ -3,7 +3,7 @@
 import UIKit
 import SnapKit
 
-final class StartScreenViewController: UIViewController {
+final class StartViewController: UIViewController {
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
