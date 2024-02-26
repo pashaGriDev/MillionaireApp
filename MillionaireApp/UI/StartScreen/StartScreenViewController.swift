@@ -1,24 +1,24 @@
 // MillionaireApp, 2024
 
 import UIKit
+import SnapKit
 
 final class StartScreenViewController: UIViewController {
     
-    //MARK: ImageViews
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "background1")
+        imageView.image = .firstBackgroud
         imageView.contentMode = .scaleToFill
         return imageView
     }()
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "imageLogo")
+        imageView.image = .imageLogo
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
-    //MARK: Labels
     private let welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = "Welcome"
@@ -37,12 +37,12 @@ final class StartScreenViewController: UIViewController {
         return label
     }()
     
-    //MARK: Buttons
     private lazy var rulesButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Правила игры", for: .normal)
         button.tintColor = .systemGreen
         button.titleLabel?.font = .systemFont(ofSize: 36, weight: .bold)
+        button.addTarget(self, action: #selector(rulesButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -51,6 +51,7 @@ final class StartScreenViewController: UIViewController {
         button.setTitle("Начало игры", for: .normal)
         button.tintColor = .systemGreen
         button.titleLabel?.font = .systemFont(ofSize: 36, weight: .bold)
+        button.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -61,17 +62,19 @@ final class StartScreenViewController: UIViewController {
     }
     
     
-    //MARK: - layout
+    //MARK: layout
+    
     private func setupLayout() {
-        [backgroundImageView,
-         logoImageView,
-         welcomeLabel,
-         mainLabel,
-         rulesButton,
-         startButton].forEach { view.addSubview($0) }
+        let views = [backgroundImageView,
+                     logoImageView,
+                     welcomeLabel,
+                     mainLabel,
+                     rulesButton,
+                     startButton]
+        view.addSubviews(views)
         
         backgroundImageView.snp.makeConstraints { make in
-            make.center.size.equalToSuperview()
+            make.edges.equalToSuperview()
         }
         
         logoImageView.snp.makeConstraints { make in
@@ -91,17 +94,18 @@ final class StartScreenViewController: UIViewController {
         }
         
         rulesButton.snp.makeConstraints { make in
-            make.top.equalTo(mainLabel.snp.bottom).inset(-140)
+            make.bottom.equalTo(startButton.snp.top).inset(-10)
             make.centerX.equalToSuperview()
         }
         
         startButton.snp.makeConstraints { make in
-            make.top.equalTo(rulesButton.snp.bottom).inset(-30)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.centerX.equalToSuperview()
         }
     }
     
     //MARK: Actions
+    
     @objc private func startButtonAction() {
         //TODO: destinationVC (start game)
     }
