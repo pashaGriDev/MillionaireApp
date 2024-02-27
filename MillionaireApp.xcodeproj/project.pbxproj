@@ -48,18 +48,18 @@
 		102249012B8BA51300F99D84 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				102249022B8BA52200F99D84 /* Extention */,
+				102249022B8BA52200F99D84 /* Extension */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		102249022B8BA52200F99D84 /* Extention */ = {
+		102249022B8BA52200F99D84 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				102249032B8BA54200F99D84 /* Closure+Block.swift */,
 				AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */,
 			);
-			path = Extention;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		10869E712B8B9EFA0018D0E9 = {
