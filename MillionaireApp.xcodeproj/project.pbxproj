@@ -15,6 +15,8 @@
 		10869E822B8B9EFA0018D0E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10869E812B8B9EFA0018D0E9 /* ViewController.swift */; };
 		10869E872B8B9EFC0018D0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10869E862B8B9EFC0018D0E9 /* Assets.xcassets */; };
 		10869E8A2B8B9EFC0018D0E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10869E882B8B9EFC0018D0E9 /* LaunchScreen.storyboard */; };
+		AA502A322B8E61F0006FD6B2 /* ProgressImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA502A312B8E61F0006FD6B2 /* ProgressImageModel.swift */; };
+		AA502A362B8E6EA8006FD6B2 /* QuestionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA502A352B8E6EA8006FD6B2 /* QuestionImageCell.swift */; };
 		AA7144122B8E1E07007247CE /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7144112B8E1E07007247CE /* ProgressViewController.swift */; };
 		AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */; };
 		AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */; };
@@ -29,6 +31,8 @@
 		10869E862B8B9EFC0018D0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10869E892B8B9EFC0018D0E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10869E8B2B8B9EFC0018D0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA502A312B8E61F0006FD6B2 /* ProgressImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressImageModel.swift; sourceTree = "<group>"; };
+		AA502A352B8E6EA8006FD6B2 /* QuestionImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionImageCell.swift; sourceTree = "<group>"; };
 		AA7144112B8E1E07007247CE /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -128,10 +132,28 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		AA502A332B8E6B5F006FD6B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA502A352B8E6EA8006FD6B2 /* QuestionImageCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA502A342B8E6B65006FD6B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA502A312B8E61F0006FD6B2 /* ProgressImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AA7144102B8E1DD8007247CE /* Progress */ = {
 			isa = PBXGroup;
 			children = (
 				AA7144112B8E1E07007247CE /* ProgressViewController.swift */,
+				AA502A332B8E6B5F006FD6B2 /* View */,
+				AA502A342B8E6B65006FD6B2 /* Model */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -224,7 +246,9 @@
 				AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */,
 				10869E822B8B9EFA0018D0E9 /* ViewController.swift in Sources */,
 				102249042B8BA54200F99D84 /* Closure+Block.swift in Sources */,
+				AA502A362B8E6EA8006FD6B2 /* QuestionImageCell.swift in Sources */,
 				AA7144122B8E1E07007247CE /* ProgressViewController.swift in Sources */,
+				AA502A322B8E61F0006FD6B2 /* ProgressImageModel.swift in Sources */,
 				10869E7E2B8B9EFA0018D0E9 /* AppDelegate.swift in Sources */,
 				10869E802B8B9EFA0018D0E9 /* SceneDelegate.swift in Sources */,
 				AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */,

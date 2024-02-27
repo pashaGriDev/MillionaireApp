@@ -5,8 +5,21 @@ import SnapKit
 
 final class ProgressViewController: UIViewController {
     
+    private let progressImageModel = ProgressImageModel.mockModel()
+    
     //TODO: Временная переменная. Хранит текущий номер вопроса
     private var currentQuestion: Int = 1
+    
+    private lazy var questionCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.register(QuestionImageCell.self, forCellWithReuseIdentifier: QuestionImageCell.identifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -30,7 +43,8 @@ final class ProgressViewController: UIViewController {
     
     private func setupLayout() {
         view.addSubviews([backgroundImageView,
-                         logoImageView])
+                         logoImageView,
+                         questionCollectionView])
         
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -41,5 +55,35 @@ final class ProgressViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.height.width.equalTo(80)
         }
+        
+        questionCollectionView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview().inset(40)
+            make.top.equalTo(logoImageView.snp.bottom).offset(20)
+        }
+    }
+}
+
+
+//MARK: - collection dataSource/delegate
+
+extension ProgressViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        progressImageModel.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuestionImageCell.identifier, for: indexPath) as! QuestionImageCell
+        cell.setupCell(image: progressImageModel[indexPath.item])
+        return cell
+    }
+}
+
+extension ProgressViewController: UICollectionViewDelegateFlowLayout {
+    var inset: CGFloat { return 10 }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        let height = (collectionView.bounds.height - inset * 14) / 15
+        return CGSize(width: width, height: height)
     }
 }
