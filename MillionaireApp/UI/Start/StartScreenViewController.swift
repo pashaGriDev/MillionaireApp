@@ -15,7 +15,7 @@ final class StartViewController: UIViewController {
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .imageLogo
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -58,6 +58,7 @@ final class StartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         setupLayout()
     }
     
@@ -65,13 +66,12 @@ final class StartViewController: UIViewController {
     //MARK: layout
     
     private func setupLayout() {
-        let views = [backgroundImageView,
-                     logoImageView,
-                     welcomeLabel,
-                     mainLabel,
-                     rulesButton,
-                     startButton]
-        view.addSubviews(views)
+        view.addSubviews([backgroundImageView,
+                          logoImageView,
+                          welcomeLabel,
+                          mainLabel,
+                          rulesButton,
+                          startButton])
         
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -84,17 +84,17 @@ final class StartViewController: UIViewController {
         }
         
         welcomeLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).inset(-20)
+            make.top.equalTo(logoImageView.snp.bottom).offset(20)
             make.centerX.equalToSuperview()
         }
         
         mainLabel.snp.makeConstraints { make in
-            make.top.equalTo(welcomeLabel.snp.bottom).inset(-10)
+            make.top.equalTo(welcomeLabel.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
         }
         
         rulesButton.snp.makeConstraints { make in
-            make.bottom.equalTo(startButton.snp.top).inset(-10)
+            make.bottom.equalTo(startButton.snp.top).offset(10)
             make.centerX.equalToSuperview()
         }
         
