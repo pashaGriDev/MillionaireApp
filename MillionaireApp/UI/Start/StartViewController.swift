@@ -7,8 +7,7 @@ final class StartViewController: UIViewController {
     
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .firstBackgroud
-        imageView.contentMode = .scaleToFill
+        imageView.image = .firstBackground
         return imageView
     }()
     
