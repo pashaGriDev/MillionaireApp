@@ -2,12 +2,18 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 final class ProgressViewController: UIViewController {
     
+    //MARK: Variables for audioPlayer
+    private var audioPlayer: AVAudioPlayer?
+    private let successSoundFilename = "correctAnsverSound"
+    private let failureSoundFilename = "wrongAnsverSound"
+    
     private let imagesModel = ProgressImage.mockModel()
     
-    //TODO: Временная переменная. Хранит текущий номер вопроса
+    //TODO: Входные данные
     private var currentQuestion: Int = 1
     private var isCorrectQuestion: Bool = true
     
@@ -46,6 +52,25 @@ final class ProgressViewController: UIViewController {
         setupLayout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        switch isCorrectQuestion {
+        case true:
+            playSound(for: successSoundFilename)
+            Thread.sleep(forTimeInterval: 10.0)
+            //TODO: Back to game
+        case false:
+            playSound(for: failureSoundFilename)
+            Thread.sleep(forTimeInterval: 10.0)
+            //TODO: To results screen
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer?.stop()
+    }
+    
     
     //MARK: layout
     
@@ -67,6 +92,24 @@ final class ProgressViewController: UIViewController {
         questionCollectionView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(40)
             make.top.equalTo(logoImageView.snp.bottom).offset(20)
+        }
+    }
+    
+    //MARK: Audio method
+    
+    private func playSound(for filename: String) {
+        guard let path = Bundle.main.path(forResource: filename, ofType: ".mp3") else {
+            print("From AVAudio: Can't find filepath")
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+            
+        } catch {
+            print("From AVAudio: \(error.localizedDescription)")
         }
     }
 }
@@ -95,3 +138,4 @@ extension ProgressViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+

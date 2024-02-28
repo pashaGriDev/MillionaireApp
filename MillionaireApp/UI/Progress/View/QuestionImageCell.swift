@@ -2,7 +2,7 @@
 
 import UIKit
 import SnapKit
-//TODO: Поменять нейминги
+
 final class QuestionImageCell: UICollectionViewCell {
     
     private let backgroundImageView: UIImageView = {
