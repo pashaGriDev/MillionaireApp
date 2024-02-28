@@ -110,6 +110,8 @@ final class StartViewController: UIViewController {
     }
     
     @objc private func rulesButtonAction() {
-        //TODO: destinationVC (rules of game)
+        let rulesViewController = RulesViewController()
+        self.navigationController?.pushViewController(rulesViewController, animated: true)
+        
     }
 }
