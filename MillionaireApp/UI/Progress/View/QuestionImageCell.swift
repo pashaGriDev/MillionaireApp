@@ -61,12 +61,12 @@ final class QuestionImageCell: UICollectionViewCell {
         }
         
         questionLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(5)
+            make.top.bottom.equalToSuperview()
             make.leading.equalToSuperview().inset(20)
         }
         
         amountLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(5)
+            make.top.bottom.equalToSuperview()
             make.trailing.equalToSuperview().inset(20)
         }
     }
