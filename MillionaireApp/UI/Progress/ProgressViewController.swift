@@ -5,10 +5,11 @@ import SnapKit
 
 final class ProgressViewController: UIViewController {
     
-    private let progressImageModel = ProgressImageModel.mockModel()
+    private let imagesModel = ProgressImage.mockModel()
     
     //TODO: Временная переменная. Хранит текущий номер вопроса
     private var currentQuestion: Int = 1
+    private var isCorrectQuestion: Bool = true
     
     private lazy var questionCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -34,9 +35,10 @@ final class ProgressViewController: UIViewController {
     }()
 
     
-    convenience init(currentQuestion: Int) {
+    convenience init(currentQuestion: Int, isCorrectQuestion: Bool) {
         self.init()
         self.currentQuestion = currentQuestion
+        self.isCorrectQuestion = isCorrectQuestion
     }
     
     override func viewDidLoad() {
@@ -74,12 +76,12 @@ final class ProgressViewController: UIViewController {
 
 extension ProgressViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        progressImageModel.count
+        imagesModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuestionImageCell.identifier, for: indexPath) as! QuestionImageCell
-        cell.setupCell(image: progressImageModel[indexPath.item], item: indexPath.item + 1, question: currentQuestion)
+        cell.setupCell(image: imagesModel[indexPath.item], question: currentQuestion, isCorrect: isCorrectQuestion)
         return cell
     }
 }

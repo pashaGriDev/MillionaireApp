@@ -34,13 +34,16 @@ final class QuestionImageCell: UICollectionViewCell {
     }
     
     
-    public func setupCell(image: ProgressImageModel, item: Int, question number: Int) {
+    public func setupCell(image: ProgressImage, question number: Int, isCorrect: Bool) {
         var currentImage = image
         
-        if item <= number {
-            currentImage = ProgressImageModel(number: image.number, amount: image.amount, backgroundImage: .current)
-            if (item == 5 || item == 10) && item != number {
-                currentImage = ProgressImageModel(number: image.number, amount: image.amount, backgroundImage: image.backgroundImage)
+        if image.number <= number {
+            currentImage = ProgressImage(number: image.number, amount: image.amount, backgroundImage: .current)
+            if (image.number == 5 || image.number == 10) && image.number != number {
+                currentImage = ProgressImage(number: image.number, amount: image.amount, backgroundImage: image.backgroundImage)
+            }
+            if !isCorrect && image.number == number {
+                currentImage = ProgressImage(number: image.number, amount: image.amount, backgroundImage: .wrong)
             }
         }
         
