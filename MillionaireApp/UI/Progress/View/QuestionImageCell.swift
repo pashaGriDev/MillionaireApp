@@ -34,8 +34,17 @@ final class QuestionImageCell: UICollectionViewCell {
     }
     
     
-    public func setupCell(image: ProgressImageModel) {
-        backgroundImageView.image = image.backgroundImage.image
+    public func setupCell(image: ProgressImageModel, item: Int, question number: Int) {
+        var currentImage = image
+        
+        if item <= number {
+            currentImage = ProgressImageModel(number: image.number, amount: image.amount, backgroundImage: .current)
+            if (item == 5 || item == 10) && item != number {
+                currentImage = ProgressImageModel(number: image.number, amount: image.amount, backgroundImage: image.backgroundImage)
+            }
+        }
+        
+        backgroundImageView.image = currentImage.backgroundImage.image
         questionLabel.text = "Вопрос \(image.number)"
         if image.number == 15 {
             amountLabel.text = "1 Миллион"
@@ -53,8 +62,8 @@ final class QuestionImageCell: UICollectionViewCell {
     
     private func setupLayout() {
         contentView.addSubviews([backgroundImageView,
-                         questionLabel,
-                         amountLabel])
+                                 questionLabel,
+                                 amountLabel])
         
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

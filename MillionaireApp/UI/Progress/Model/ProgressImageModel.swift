@@ -49,7 +49,7 @@ struct ProgressImageModel {
             ProgressImageModel(number: 13, amount: 250_000, backgroundImage: .common),
             ProgressImageModel(number: 14, amount: 500_000, backgroundImage: .common),
             ProgressImageModel(number: 15, amount: 1000_000, backgroundImage: .final),]
-        model.reverse()
+//        model.reverse()
         return model
     }
 }

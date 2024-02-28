@@ -33,6 +33,12 @@ final class ProgressViewController: UIViewController {
         return imageView
     }()
 
+    
+    convenience init(currentQuestion: Int) {
+        self.init()
+        self.currentQuestion = currentQuestion
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -73,7 +79,7 @@ extension ProgressViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuestionImageCell.identifier, for: indexPath) as! QuestionImageCell
-        cell.setupCell(image: progressImageModel[indexPath.item])
+        cell.setupCell(image: progressImageModel[indexPath.item], item: indexPath.item + 1, question: currentQuestion)
         return cell
     }
 }
