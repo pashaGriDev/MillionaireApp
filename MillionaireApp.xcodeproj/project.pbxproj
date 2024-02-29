@@ -17,6 +17,9 @@
 		10869E872B8B9EFC0018D0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10869E862B8B9EFC0018D0E9 /* Assets.xcassets */; };
 		10869E8A2B8B9EFC0018D0E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10869E882B8B9EFC0018D0E9 /* LaunchScreen.storyboard */; };
 		130E22552B8FAFFF003F9991 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E22542B8FAFFF003F9991 /* ResultViewController.swift */; };
+		130E22762B906756003F9991 /* Syne.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 130E22752B906756003F9991 /* Syne.ttf */; };
+		130E22782B90680F003F9991 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 130E22772B90680F003F9991 /* Roboto-Medium.ttf */; };
+		130E227A2B906A7A003F9991 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130E22792B906A7A003F9991 /* ResultView.swift */; };
 		AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */; };
 		AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +35,9 @@
 		10869E892B8B9EFC0018D0E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10869E8B2B8B9EFC0018D0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		130E22542B8FAFFF003F9991 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		130E22752B906756003F9991 /* Syne.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Syne.ttf; sourceTree = "<group>"; };
+		130E22772B90680F003F9991 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		130E22792B906A7A003F9991 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +96,7 @@
 				102249012B8BA51300F99D84 /* Common */,
 				10869E922B8BA0750018D0E9 /* UI */,
 				10869E932B8BA0970018D0E9 /* Resources */,
+				130E22722B90631E003F9991 /* Font */,
 			);
 			path = MillionaireApp;
 			sourceTree = "<group>";
@@ -111,6 +118,7 @@
 				AA92B5872B8CC3DD00EDDB44 /* Start */,
 				10869E812B8B9EFA0018D0E9 /* ViewController.swift */,
 				130E22542B8FAFFF003F9991 /* ResultViewController.swift */,
+				130E22792B906A7A003F9991 /* ResultView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -121,6 +129,15 @@
 				10869E862B8B9EFC0018D0E9 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		130E22722B90631E003F9991 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				130E22772B90680F003F9991 /* Roboto-Medium.ttf */,
+				130E22752B906756003F9991 /* Syne.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		AA92B5872B8CC3DD00EDDB44 /* Start */ = {
@@ -196,6 +213,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130E22782B90680F003F9991 /* Roboto-Medium.ttf in Resources */,
+				130E22762B906756003F9991 /* Syne.ttf in Resources */,
 				10869E8A2B8B9EFC0018D0E9 /* LaunchScreen.storyboard in Resources */,
 				10869E872B8B9EFC0018D0E9 /* Assets.xcassets in Resources */,
 			);
@@ -210,6 +229,7 @@
 			files = (
 				AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */,
 				10869E822B8B9EFA0018D0E9 /* ViewController.swift in Sources */,
+				130E227A2B906A7A003F9991 /* ResultView.swift in Sources */,
 				102249042B8BA54200F99D84 /* Closure+Block.swift in Sources */,
 				130E22552B8FAFFF003F9991 /* ResultViewController.swift in Sources */,
 				10869E7E2B8B9EFA0018D0E9 /* AppDelegate.swift in Sources */,
