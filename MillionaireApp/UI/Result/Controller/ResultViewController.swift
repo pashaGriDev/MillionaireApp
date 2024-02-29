@@ -5,8 +5,8 @@ import SnapKit
 
 class ResultViewController: UIViewController {
     
-    let winning: Int
-    let customView = ResultView()
+    private let result: Int
+    private let customView = ResultView()
     
     private lazy var restartButton: UIButton = {
         let button = UIButton()
@@ -30,8 +30,8 @@ class ResultViewController: UIViewController {
         return button
     }()
     
-    init(winning: Int) {
-        self.winning = winning
+    init(result: Int) {
+        self.result = result
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,7 +44,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        showResult(result: winning)
+        showResult(result: result)
     }
     
     // MARK: - Methods

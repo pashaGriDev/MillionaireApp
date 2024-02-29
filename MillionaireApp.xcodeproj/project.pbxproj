@@ -98,7 +98,6 @@
 				102249012B8BA51300F99D84 /* Common */,
 				10869E922B8BA0750018D0E9 /* UI */,
 				10869E932B8BA0970018D0E9 /* Resources */,
-				130E22722B90631E003F9991 /* Font */,
 			);
 			path = MillionaireApp;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 		10869E932B8BA0970018D0E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				130E22722B90631E003F9991 /* Font */,
 				10869E862B8B9EFC0018D0E9 /* Assets.xcassets */,
 			);
 			path = Resources;
