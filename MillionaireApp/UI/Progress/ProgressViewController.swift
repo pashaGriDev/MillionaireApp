@@ -113,12 +113,13 @@ final class ProgressViewController: UIViewController {
         switch isCorrectQuestion {
         case true:
             playSound(for: SoundFilenames.successSound.rawValue)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
                 //TODO: Back to game
             }
+            
         case false:
             playSound(for: SoundFilenames.failureSound.rawValue)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+            Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
                 //TODO: To results screen
             }
         }
