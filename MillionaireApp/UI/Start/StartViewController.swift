@@ -111,7 +111,7 @@ final class StartViewController: UIViewController {
     
     @objc private func rulesButtonAction() {
         let rulesViewController = RulesViewController()
-        self.navigationController?.pushViewController(rulesViewController, animated: true)
+        present(rulesViewController, animated: true, completion: nil)
         
     }
 }
