@@ -31,7 +31,6 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        view.addSubview(customView)
         customView.setupLayots()
         setupLayots()
     }
