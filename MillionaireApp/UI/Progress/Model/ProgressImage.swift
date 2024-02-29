@@ -4,7 +4,7 @@ import Foundation
 import UIKit
 
 struct ProgressImage {
-    //MARK: Images enumeration
+    
     enum ImageStates {
         case current
         case common
@@ -15,6 +15,7 @@ struct ProgressImage {
         var image: UIImage {
             switch self {
             case .current:
+                //TODO: Нейминг в ассетах
                 return .currentQueistion
             case .common:
                 return .commonQuestion
@@ -31,8 +32,12 @@ struct ProgressImage {
     let number: Int
     let amount: Int
     var backgroundImage: ImageStates
-    
-    static func mockModel() -> [ProgressImage] {
+}
+
+
+
+extension ProgressImage {
+    static func makeModel() -> [ProgressImage] {
         var model: [ProgressImage] = [
             ProgressImage(number: 1, amount: 100, backgroundImage: .current),
             ProgressImage(number: 2, amount: 200, backgroundImage: .common),

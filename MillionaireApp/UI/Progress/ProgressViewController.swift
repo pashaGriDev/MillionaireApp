@@ -7,15 +7,20 @@ import AVFoundation
 final class ProgressViewController: UIViewController {
     
     //MARK: Variables for audioPlayer
+    
+    enum SoundFilenames: String {
+        case successSound = "correctAnsverSound"
+        case failureSound = "wrongAnsverSound"
+    }
+    
     private var audioPlayer: AVAudioPlayer?
-    private let successSoundFilename = "correctAnsverSound"
-    private let failureSoundFilename = "wrongAnsverSound"
     
-    private let imagesModel = ProgressImage.mockModel()
+    private let imagesModel = ProgressImage.makeModel()
     
-    //TODO: Входные данные
-    private var currentQuestion: Int = 1
-    private var isCorrectQuestion: Bool = true
+    //TODO: Input data from init()
+    
+    private let currentQuestion: Int
+    private let isCorrectQuestion: Bool
     
     private lazy var questionCollectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -41,29 +46,26 @@ final class ProgressViewController: UIViewController {
     }()
 
     
-    convenience init(currentQuestion: Int, isCorrectQuestion: Bool) {
-        self.init()
+    init(currentQuestion: Int, isCorrectQuestion: Bool) {
         self.currentQuestion = currentQuestion
         self.isCorrectQuestion = isCorrectQuestion
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.isNavigationBarHidden = true
         setupLayout()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        switch isCorrectQuestion {
-        case true:
-            playSound(for: successSoundFilename)
-            Thread.sleep(forTimeInterval: 10.0)
-            //TODO: Back to game
-        case false:
-            playSound(for: failureSoundFilename)
-            Thread.sleep(forTimeInterval: 10.0)
-            //TODO: To results screen
-        }
+        setupControllerBehavior()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,9 +77,7 @@ final class ProgressViewController: UIViewController {
     //MARK: layout
     
     private func setupLayout() {
-        view.addSubviews([backgroundImageView,
-                         logoImageView,
-                         questionCollectionView])
+        view.addSubviews([backgroundImageView, logoImageView, questionCollectionView])
         
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -112,6 +112,21 @@ final class ProgressViewController: UIViewController {
             print("From AVAudio: \(error.localizedDescription)")
         }
     }
+    
+    private func setupControllerBehavior() {
+        switch isCorrectQuestion {
+        case true:
+            playSound(for: SoundFilenames.successSound.rawValue)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+                //TODO: Back to game
+            }
+        case false:
+            playSound(for: SoundFilenames.failureSound.rawValue)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+                //TODO: To results screen
+            }
+        }
+    }
 }
 
 
@@ -130,11 +145,10 @@ extension ProgressViewController: UICollectionViewDataSource {
 }
 
 extension ProgressViewController: UICollectionViewDelegateFlowLayout {
-    var inset: CGFloat { return 10 }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
-        let height = (collectionView.bounds.height - inset * 14) / 15
+        let height = (collectionView.bounds.height - 10 * 14) / 15
         return CGSize(width: width, height: height)
     }
 }

@@ -23,6 +23,7 @@
 		AA7B083C2B8FDF1900B4AC87 /* correctAnsverSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA7B08392B8FDF1900B4AC87 /* correctAnsverSound.mp3 */; };
 		AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */; };
 		AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */; };
+		AAA055CC2B90B69E001E554F /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA055CB2B90B69E001E554F /* UICollectionViewCell+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		AA7B08392B8FDF1900B4AC87 /* correctAnsverSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correctAnsverSound.mp3; sourceTree = "<group>"; };
 		AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		AAA055CB2B90B69E001E554F /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				102249032B8BA54200F99D84 /* Closure+Block.swift */,
 				AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */,
+				AAA055CB2B90B69E001E554F /* UICollectionViewCell+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				AA502A322B8E61F0006FD6B2 /* ProgressImage.swift in Sources */,
 				10869E7E2B8B9EFA0018D0E9 /* AppDelegate.swift in Sources */,
 				10869E802B8B9EFA0018D0E9 /* SceneDelegate.swift in Sources */,
+				AAA055CC2B90B69E001E554F /* UICollectionViewCell+Extension.swift in Sources */,
 				AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

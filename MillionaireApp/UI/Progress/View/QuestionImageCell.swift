@@ -5,11 +5,7 @@ import SnapKit
 
 final class QuestionImageCell: UICollectionViewCell {
     
-    private let backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        return imageView
-    }()
+    private let backgroundImageView = UIImageView()
     
     private let questionLabel: UILabel = {
         let label = UILabel()
@@ -28,12 +24,13 @@ final class QuestionImageCell: UICollectionViewCell {
         super.init(frame: frame)
         setupLayout()
     }
+    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    //TODO: Убрать логику
     public func setupCell(image: ProgressImage, question number: Int, isCorrect: Bool) {
         var currentImage = image
         
@@ -55,7 +52,7 @@ final class QuestionImageCell: UICollectionViewCell {
             amountLabel.text = "\(image.amount) RUB"
         }
     }
-    
+    //TODO: Убрать?
     override func prepareForReuse() {
         super.prepareForReuse()
         backgroundImageView.image = nil
@@ -64,9 +61,7 @@ final class QuestionImageCell: UICollectionViewCell {
     }
     
     private func setupLayout() {
-        contentView.addSubviews([backgroundImageView,
-                                 questionLabel,
-                                 amountLabel])
+        contentView.addSubviews([backgroundImageView, questionLabel, amountLabel])
         
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
