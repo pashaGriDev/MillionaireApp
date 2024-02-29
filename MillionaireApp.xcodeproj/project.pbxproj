@@ -10,6 +10,7 @@
 		102248FE2B8BA30A00F99D84 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 102248FD2B8BA30A00F99D84 /* SnapKit */; };
 		102249002B8BA30A00F99D84 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 102248FF2B8BA30A00F99D84 /* SnapKit-Dynamic */; };
 		102249042B8BA54200F99D84 /* Closure+Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102249032B8BA54200F99D84 /* Closure+Block.swift */; };
+		103E9A422B9118D80033EE7F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103E9A412B9118D80033EE7F /* AppCoordinator.swift */; };
 		1041F1682B8E8C05009F271C /* PreviewSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1041F1672B8E8C04009F271C /* PreviewSwiftUI.swift */; };
 		10869E7E2B8B9EFA0018D0E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10869E7D2B8B9EFA0018D0E9 /* AppDelegate.swift */; };
 		10869E802B8B9EFA0018D0E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10869E7F2B8B9EFA0018D0E9 /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		102249032B8BA54200F99D84 /* Closure+Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Closure+Block.swift"; sourceTree = "<group>"; };
+		103E9A412B9118D80033EE7F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		1041F1672B8E8C04009F271C /* PreviewSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewSwiftUI.swift; sourceTree = "<group>"; };
 		10869E7A2B8B9EFA0018D0E9 /* MillionaireApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillionaireApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10869E7D2B8B9EFA0018D0E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		10869E922B8BA0750018D0E9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				103E9A412B9118D80033EE7F /* AppCoordinator.swift */,
 				AA92B5872B8CC3DD00EDDB44 /* Start */,
 				10869E812B8B9EFA0018D0E9 /* ViewController.swift */,
 			);
@@ -236,6 +239,7 @@
 				5D5CE9532B9115E400811030 /* JsonParser.swift in Sources */,
 				102249042B8BA54200F99D84 /* Closure+Block.swift in Sources */,
 				10869E7E2B8B9EFA0018D0E9 /* AppDelegate.swift in Sources */,
+				103E9A422B9118D80033EE7F /* AppCoordinator.swift in Sources */,
 				10869E802B8B9EFA0018D0E9 /* SceneDelegate.swift in Sources */,
 				5D5CE94F2B910E8600811030 /* QuestionModel.swift in Sources */,
 				AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */,
