@@ -1,9 +1,12 @@
 // MillionaireApp, 2024
 
 import UIKit
-
+import SnapKit
 
 class ResultViewController: UIViewController {
+    
+    let winning: Int
+    let customView = ResultView()
     
     private lazy var restartButton: UIButton = {
         let button = UIButton()
@@ -12,6 +15,7 @@ class ResultViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(restartGame(sender:)), for: .touchUpInside)
         return button
     }()
     
@@ -22,34 +26,39 @@ class ResultViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(saveResult(sender:)), for: .touchUpInside)
         return button
     }()
     
-    // MARK: - LifeCycle
+    init(winning: Int) {
+        self.winning = winning
+        super.init(nibName: nil, bundle: nil)
+    }
     
-    let customView = ResultView()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customView.setupLayots()
-        setupLayots()
+        setupView()
+        showResult(result: winning)
     }
     
     // MARK: - Methods
     
-    @objc func restartGame(sender: UIButton) {
+    @objc private func restartGame(sender: UIButton) {
         print("TRY AGAIN")
     }
     
-    @objc func saveResult(sender: UIButton) {
+    @objc private func saveResult(sender: UIButton) {
         print("SAVE RESULT")
     }
     
-    func setupLayots() {
+    private func setupView() {
         view.addSubviews([customView, saveResultButton, restartButton])
-        
-        restartButton.addTarget(self, action: #selector(restartGame(sender:)), for: .touchUpInside)
-        saveResultButton.addTarget(self, action: #selector(saveResult(sender:)), for: .touchUpInside)
         
         customView.snp.makeConstraints { make in
             make.edges.equalTo(view)
@@ -70,18 +79,12 @@ class ResultViewController: UIViewController {
         }
     }
     
-    func checkResult(result: Int) {
+    func showResult(result: Int) {
         switch result {
-        case 1_000..<32_000 :
-            customView.setLabelText(score: 1000, result: "ВЫ ВЫЙГРАЛИ")
-        case 32_000..<500_000 :
-            customView.setLabelText(score: 32000, result: "ВЫ ВЫЙГРАЛИ")
-        case 500_000..<1_000_000 :
-            customView.setLabelText(score: 500000, result: "ВЫ ВЫЙГРАЛИ")
-        case 1_000_000... :
-            customView.setLabelText(score: 1000000, result: "ВЫ ВЫЙГРАЛИ")
-        default:
+        case 0 :
             customView.setLabelText(score: 0, result: "ВЫ ПРОТГРАЛИ")
+        default:
+            customView.setLabelText(score: result, result: "ВЫ ВЫЙГРАЛИ")
         }
     }
 }
