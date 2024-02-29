@@ -19,7 +19,6 @@ class ResultView: UIView {
     
     private let resultScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "ВАШ ВЫЙГРЫШ"
         label.textAlignment = .center
         label.font = UIFont(name: "Roboto-Medium", size: 24)
         label.textColor = .white
@@ -28,11 +27,9 @@ class ResultView: UIView {
     
     private let resultLabel: UILabel = {
         let label = UILabel()
-        label.text = "ВЫ ПРОИГРАЛИ"
         label.textAlignment = .center
         label.textColor = .customOrange
         label.font = UIFont(name: "Syne", size: 30)
-        label.textColor = .red
         return label
     }()
     
@@ -47,7 +44,7 @@ class ResultView: UIView {
     
     // MARK: - Methods
     
-    func setupLayouts() {
+    private func setupLayouts() {
         self.addSubviews([backgroundImageView, logoImageView, resultScoreLabel, resultLabel])
         
         backgroundImageView.snp.makeConstraints { make in

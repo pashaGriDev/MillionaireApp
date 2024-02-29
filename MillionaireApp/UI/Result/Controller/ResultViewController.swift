@@ -79,10 +79,10 @@ class ResultViewController: UIViewController {
         }
     }
     
-    func showResult(result: Int) {
+    private func showResult(result: Int) {
         switch result {
         case 0 :
-            customView.setLabelText(score: 0, result: "ВЫ ПРОТГРАЛИ")
+            customView.setLabelText(score: 0, result: "ВЫ ПРОИГРАЛИ")
         default:
             customView.setLabelText(score: result, result: "ВЫ ВЫЙГРАЛИ")
         }
