@@ -2,12 +2,12 @@
 
 import Foundation
 
-struct QuestionModel {
+struct QuestionModel: Codable {
     let response_code: Int
     let results: [ResulytsModel]
 }
 
-struct ResulytsModel {
+struct ResulytsModel: Codable {
     
     let type: String
     let difficulty: String
