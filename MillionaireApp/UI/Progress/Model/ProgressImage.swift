@@ -16,7 +16,7 @@ struct ProgressImage {
             switch self {
             case .current:
                 //TODO: Нейминг в ассетах
-                return .currentQueistion
+                return .currentQuestion
             case .common:
                 return .commonQuestion
             case .guarantee:

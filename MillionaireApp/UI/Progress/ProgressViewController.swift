@@ -109,18 +109,24 @@ final class ProgressViewController: UIViewController {
         }
     }
     
+    //MARK: Controller behavior
+    
     private func setupControllerBehavior() {
         switch isCorrectQuestion {
         case true:
             playSound(for: SoundFilenames.successSound.rawValue)
             Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
+                
                 //TODO: Back to game
+                
             }
             
         case false:
             playSound(for: SoundFilenames.failureSound.rawValue)
             Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
+                
                 //TODO: To results screen
+                
             }
         }
     }
