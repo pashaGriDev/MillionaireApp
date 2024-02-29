@@ -30,34 +30,14 @@ final class QuestionImageCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //TODO: Убрать логику
-    public func setupCell(image: ProgressImage, question number: Int, isCorrect: Bool) {
-        var currentImage = image
-        
-        if image.number <= number {
-            currentImage = ProgressImage(number: image.number, amount: image.amount, backgroundImage: .current)
-            if (image.number == 5 || image.number == 10) && image.number != number {
-                currentImage = ProgressImage(number: image.number, amount: image.amount, backgroundImage: image.backgroundImage)
-            }
-            if !isCorrect && image.number == number {
-                currentImage = ProgressImage(number: image.number, amount: image.amount, backgroundImage: .wrong)
-            }
-        }
-        
-        backgroundImageView.image = currentImage.backgroundImage.image
+    public func setupCell(image: ProgressImage) {
+        backgroundImageView.image = image.backgroundImage.image
         questionLabel.text = "Вопрос \(image.number)"
         if image.number == 15 {
             amountLabel.text = "1 Миллион"
         } else {
             amountLabel.text = "\(image.amount) RUB"
         }
-    }
-    //TODO: Убрать?
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        backgroundImageView.image = nil
-        questionLabel.text = nil
-        amountLabel.text = nil
     }
     
     private func setupLayout() {

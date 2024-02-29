@@ -33,18 +33,14 @@ final class ProgressViewController: UIViewController {
         return collectionView
     }()
     
-    private let backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .firstBackground
-        return imageView
-    }()
+    private let backgroundImageView = UIImageView(image: .firstBackground)
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView(image: .imageLogo)
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-
+    
     
     init(currentQuestion: Int, isCorrectQuestion: Bool) {
         self.currentQuestion = currentQuestion
@@ -127,6 +123,22 @@ final class ProgressViewController: UIViewController {
             }
         }
     }
+    
+    private func getBackgroundImageForCell(at item: Int) -> ProgressImage {
+        let initialImage = imagesModel[item]
+        var image = initialImage
+        
+        if initialImage.number <= currentQuestion {
+            image = ProgressImage(number: initialImage.number, amount: initialImage.amount, backgroundImage: .current)
+            if (initialImage.number == 5 || initialImage.number == 10) && initialImage.number != currentQuestion {
+                image = initialImage
+            }
+            if !isCorrectQuestion && initialImage.number == currentQuestion {
+                image = ProgressImage(number: initialImage.number, amount: initialImage.amount, backgroundImage: .wrong)
+            }
+        }
+        return image
+    }
 }
 
 
@@ -139,7 +151,9 @@ extension ProgressViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuestionImageCell.identifier, for: indexPath) as! QuestionImageCell
-        cell.setupCell(image: imagesModel[indexPath.item], question: currentQuestion, isCorrect: isCorrectQuestion)
+        
+        let imageForCell = getBackgroundImageForCell(at: indexPath.item)
+        cell.setupCell(image: imageForCell)
         return cell
     }
 }
