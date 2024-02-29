@@ -16,6 +16,9 @@
 		10869E822B8B9EFA0018D0E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10869E812B8B9EFA0018D0E9 /* ViewController.swift */; };
 		10869E872B8B9EFC0018D0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10869E862B8B9EFC0018D0E9 /* Assets.xcassets */; };
 		10869E8A2B8B9EFC0018D0E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10869E882B8B9EFC0018D0E9 /* LaunchScreen.storyboard */; };
+		5D5CE94F2B910E8600811030 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CE94E2B910E8600811030 /* QuestionModel.swift */; };
+		5D5CE9512B9115C800811030 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5CE9502B9115C700811030 /* Questions.json */; };
+		5D5CE9532B9115E400811030 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CE9522B9115E400811030 /* JsonParser.swift */; };
 		AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */; };
 		AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +33,9 @@
 		10869E862B8B9EFC0018D0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10869E892B8B9EFC0018D0E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10869E8B2B8B9EFC0018D0E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D5CE94E2B910E8600811030 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		5D5CE9502B9115C700811030 /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
+		5D5CE9522B9115E400811030 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +92,8 @@
 			children = (
 				10869E912B8BA06F0018D0E9 /* App */,
 				102249012B8BA51300F99D84 /* Common */,
+				5D5CE9542B911B3200811030 /* DataService */,
+				5D5CE9492B910E2800811030 /* Models */,
 				10869E922B8BA0750018D0E9 /* UI */,
 				10869E932B8BA0970018D0E9 /* Resources */,
 			);
@@ -118,6 +126,23 @@
 				10869E862B8B9EFC0018D0E9 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5D5CE9492B910E2800811030 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D5CE94E2B910E8600811030 /* QuestionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D5CE9542B911B3200811030 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				5D5CE9522B9115E400811030 /* JsonParser.swift */,
+				5D5CE9502B9115C700811030 /* Questions.json */,
+			);
+			path = DataService;
 			sourceTree = "<group>";
 		};
 		AA92B5872B8CC3DD00EDDB44 /* Start */ = {
@@ -194,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10869E8A2B8B9EFC0018D0E9 /* LaunchScreen.storyboard in Resources */,
+				5D5CE9512B9115C800811030 /* Questions.json in Resources */,
 				10869E872B8B9EFC0018D0E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,9 +233,11 @@
 			files = (
 				AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */,
 				10869E822B8B9EFA0018D0E9 /* ViewController.swift in Sources */,
+				5D5CE9532B9115E400811030 /* JsonParser.swift in Sources */,
 				102249042B8BA54200F99D84 /* Closure+Block.swift in Sources */,
 				10869E7E2B8B9EFA0018D0E9 /* AppDelegate.swift in Sources */,
 				10869E802B8B9EFA0018D0E9 /* SceneDelegate.swift in Sources */,
+				5D5CE94F2B910E8600811030 /* QuestionModel.swift in Sources */,
 				AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */,
 				1041F1682B8E8C05009F271C /* PreviewSwiftUI.swift in Sources */,
 			);
