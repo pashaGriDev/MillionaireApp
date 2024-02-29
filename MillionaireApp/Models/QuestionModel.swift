@@ -3,16 +3,16 @@
 import Foundation
 
 struct QuestionModel: Codable {
-    let response_code: Int
-    let results: [ResulytsModel]
+    let responseCode: Int
+    let results: [ResultsModel]
 }
 
-struct ResulytsModel: Codable {
+struct ResultsModel: Codable {
     
     let type: String
     let difficulty: String
     let category: String
     let question: String
-    let correct_answer: String
-    let incorrect_answers: [String]
+    let correctAnswer: String
+    let incorrectAnswers: [String]
 }
