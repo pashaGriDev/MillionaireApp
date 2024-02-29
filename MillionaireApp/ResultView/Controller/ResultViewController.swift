@@ -5,6 +5,9 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    var result = ResultModel(user: "", result: 1)
+    var delegate: ResultViewControllerDelegate?
+    
     // MARK: - LifeCycle
     
     override func loadView() {
@@ -15,6 +18,9 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         view().addSaveButtonTarget(self, action: #selector(saveResult(sender: )))
         view().addRestartButtonTarget(self, action: #selector(restartGame(sender: )))
+        
+        self.delegate = view()
+        self.delegate?.reloadLabel(result: result)
     }
     
     override func viewDidLayoutSubviews() {

@@ -18,7 +18,6 @@ class ResultView: UIView {
     
     private let resultScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "Your score is here"
         label.textAlignment = .center
         label.font = UIFont(name: "Roboto-Medium", size: 24)
         label.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
@@ -53,6 +52,8 @@ class ResultView: UIView {
         button.layer.cornerRadius = 20
         return button
     }()
+    
+    // MARK: - Functions
     
     func setupLayots() {
         self.addSubviews([backgroundImageView,
@@ -110,6 +111,19 @@ class ResultView: UIView {
     
     func addRestartButtonTarget(_ target: Any?, action: Selector) {
         restartButton.addTarget(target, action: action, for: .touchUpInside)
+    }
+    
+}
+
+extension ResultView: ResultViewControllerDelegate {
+    func reloadLabel(result: ResultModel) {
+        resultScoreLabel.text = "Your score is \(result.result)"
+        if result.result == 1_000_000 {
+            resultLabel.text = "YOU WIN"
+            resultLabel.textColor = .systemGreen
+        } else {
+            resultLabel.text = "YOU LOSE"
+        }
     }
     
 }
