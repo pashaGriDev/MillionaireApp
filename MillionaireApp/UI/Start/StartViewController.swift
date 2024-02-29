@@ -107,6 +107,8 @@ final class StartViewController: UIViewController {
     
     @objc private func startButtonAction() {
         //TODO: destinationVC (start game)
+        let RVC = ResultViewController()
+        show(RVC, sender: nil)
     }
     
     @objc private func rulesButtonAction() {
