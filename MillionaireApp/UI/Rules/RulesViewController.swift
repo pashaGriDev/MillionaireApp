@@ -26,14 +26,14 @@ final class RulesViewController:UIViewController {
     }()
     
     private let rulesLabel: UILabel = {
-       let rules = UILabel()
+        let rules = UILabel()
         rules.textColor = .white
         rules.numberOfLines = 0
         rules.textAlignment = .left
         rules.font = .systemFont(ofSize: 14, weight: .medium)
         return rules
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -70,7 +70,7 @@ final class RulesViewController:UIViewController {
             make.top.equalTo(view.safeAreaLayoutGuide).inset(20)
             make.leading.trailing.bottom.equalToSuperview()
         }
-
+        
         mainLabel.snp.makeConstraints { make in
             make.top.equalTo(scrollView.snp.top).inset(40)
             make.centerX.equalToSuperview()
@@ -80,9 +80,6 @@ final class RulesViewController:UIViewController {
             make.top.equalTo(mainLabel.snp.bottom).offset(10)
             make.bottom.equalTo(scrollView.snp.bottom).inset(20)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
-            
         }
-        
     }
-    
 }
