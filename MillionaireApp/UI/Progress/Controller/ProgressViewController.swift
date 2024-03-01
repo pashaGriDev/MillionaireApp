@@ -5,13 +5,15 @@ import SnapKit
 import AVFoundation
 
 final class ProgressViewController: UIViewController {
-    
-    //MARK: Variables for audioPlayer
-    
+        
     enum SoundFilenames: String {
-        case successSound = "correctAnsverSound"
-        case failureSound = "wrongAnsverSound"
+        case successSound = "correctAnswerSound"
+        case failureSound = "wrongAnswerSound"
     }
+    
+    weak var coordinator: AppCoordinator?
+    
+    private var timer: Timer?
     
     private var audioPlayer: AVAudioPlayer?
     
@@ -22,7 +24,7 @@ final class ProgressViewController: UIViewController {
     private let currentQuestion: Int
     private let isCorrectQuestion: Bool
     
-    private lazy var questionCollectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
@@ -56,7 +58,7 @@ final class ProgressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
-        setupLayout()
+        setup()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -67,13 +69,13 @@ final class ProgressViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         audioPlayer?.stop()
+        timer = nil
     }
     
+    //MARK: - private methods
     
-    //MARK: layout
-    
-    private func setupLayout() {
-        view.addSubviews([backgroundImageView, logoImageView, questionCollectionView])
+    private func setup() {
+        view.addSubviews([backgroundImageView, logoImageView, collectionView])
         
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -85,14 +87,12 @@ final class ProgressViewController: UIViewController {
             make.height.width.equalTo(80)
         }
         
-        questionCollectionView.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview().inset(40)
             make.top.equalTo(logoImageView.snp.bottom).offset(20)
         }
     }
-    
-    //MARK: Audio method
-    
+        
     private func playSound(for filename: String) {
         guard let path = Bundle.main.path(forResource: filename, ofType: ".mp3") else {
             print("From AVAudio: Can't find filepath")
@@ -108,14 +108,12 @@ final class ProgressViewController: UIViewController {
             print("From AVAudio: \(error.localizedDescription)")
         }
     }
-    
-    //MARK: Controller behavior
-    
+        
     private func setupControllerBehavior() {
         switch isCorrectQuestion {
         case true:
             playSound(for: SoundFilenames.successSound.rawValue)
-            Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
+            timer = .scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
                 
                 //TODO: Back to game
                 
@@ -123,7 +121,7 @@ final class ProgressViewController: UIViewController {
             
         case false:
             playSound(for: SoundFilenames.failureSound.rawValue)
-            Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
+            timer = .scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
                 
                 //TODO: To results screen
                 
