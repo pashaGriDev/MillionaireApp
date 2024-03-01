@@ -56,13 +56,11 @@ final class StartViewController: UIViewController {
         return button
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setupLayout()
     }
-    
     
     //MARK: layout
     
@@ -112,6 +110,6 @@ final class StartViewController: UIViewController {
     }
     
     @objc private func rulesButtonAction() {
-        //TODO: destinationVC (rules of game)
+        coordinator?.showRulesScreen()
     }
 }
