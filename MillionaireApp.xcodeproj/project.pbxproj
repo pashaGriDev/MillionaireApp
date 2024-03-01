@@ -90,7 +90,6 @@
 			children = (
 				10869E912B8BA06F0018D0E9 /* App */,
 				102249012B8BA51300F99D84 /* Common */,
-				10869E942B8BA0C30018D0E9 /* Entity */,
 				10869E922B8BA0750018D0E9 /* UI */,
 				10869E932B8BA0970018D0E9 /* Resources */,
 			);
@@ -124,13 +123,6 @@
 				10869E862B8B9EFC0018D0E9 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		10869E942B8BA0C30018D0E9 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		AA92B5872B8CC3DD00EDDB44 /* Start */ = {
