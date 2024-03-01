@@ -5,6 +5,8 @@ import SnapKit
 
 final class StartViewController: UIViewController {
     
+    weak var coordinator: AppCoordinatorProtocol?
+    
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .firstBackground
