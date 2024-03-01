@@ -4,6 +4,7 @@ import UIKit
 
 protocol AppCoordinatorProtocol: AnyObject {
     func start()
+    func showRulesScreen()
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -16,6 +17,12 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func start() {
         let viewController = StartViewController()
+        viewController.coordinator = self
         navigation.setViewControllers([viewController], animated: false)
+    }
+    
+    func showRulesScreen() {
+        let rulesViewController = RulesViewController()
+        navigation.present(rulesViewController, animated: true)
     }
 }

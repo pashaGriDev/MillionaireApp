@@ -110,8 +110,6 @@ final class StartViewController: UIViewController {
     }
     
     @objc private func rulesButtonAction() {
-        let rulesViewController = RulesViewController()
-        present(rulesViewController, animated: true)
-        
+        coordinator?.showRulesScreen()
     }
 }
