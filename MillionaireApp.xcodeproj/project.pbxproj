@@ -88,7 +88,6 @@
 		10869E7C2B8B9EFA0018D0E9 /* MillionaireApp */ = {
 			isa = PBXGroup;
 			children = (
-				BFB373B02B90854D00B54764 /* Model */,
 				10869E912B8BA06F0018D0E9 /* App */,
 				102249012B8BA51300F99D84 /* Common */,
 				10869E942B8BA0C30018D0E9 /* Entity */,
@@ -145,6 +144,7 @@
 		BFB368992B8E686500C86A8E /* Rules */ = {
 			isa = PBXGroup;
 			children = (
+				BFB373B02B90854D00B54764 /* Model */,
 				BFB3689A2B8E688100C86A8E /* RulesViewController.swift */,
 			);
 			path = Rules;

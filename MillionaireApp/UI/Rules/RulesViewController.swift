@@ -27,7 +27,6 @@ final class RulesViewController:UIViewController {
     
     private let rulesLabel: UILabel = {
        let rules = UILabel()
-        rules.text = ""
         rules.textColor = .white
         rules.numberOfLines = 0
         rules.textAlignment = .left
@@ -35,11 +34,14 @@ final class RulesViewController:UIViewController {
         return rules
     }()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setupLayout()
+        formattedRules()
+    }
+    
+    private func formattedRules() {
         let rulesStruct = RulesStruct()
         let formattedText = NSMutableAttributedString()
         formattedText.append(.formattedText(rulesStruct.rulesMainText, attributes: [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 12)]))
@@ -53,7 +55,6 @@ final class RulesViewController:UIViewController {
         formattedText.append(.formattedText(rulesStruct.rulesTipsText, attributes: [.foregroundColor: UIColor.white, .font: UIFont.boldSystemFont(ofSize: 12)]))
         rulesLabel.attributedText = formattedText
     }
-    
     
     //MARK: layout
     
@@ -81,7 +82,6 @@ final class RulesViewController:UIViewController {
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             
         }
-        
         
     }
     

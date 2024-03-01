@@ -54,13 +54,11 @@ final class StartViewController: UIViewController {
         return button
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setupLayout()
     }
-    
     
     //MARK: layout
     
@@ -111,7 +109,7 @@ final class StartViewController: UIViewController {
     
     @objc private func rulesButtonAction() {
         let rulesViewController = RulesViewController()
-        present(rulesViewController, animated: true, completion: nil)
+        present(rulesViewController, animated: true)
         
     }
 }
