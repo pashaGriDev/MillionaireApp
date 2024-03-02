@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         appCoordinator = AppCoordinator(navigation: navigationController)
         
+//        let viewController = ProgressViewController(currentQuestion: 6, isCorrectQuestion: true)
+        
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
         
