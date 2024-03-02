@@ -4,6 +4,7 @@ import UIKit
 import SnapKit
 
 final class GameViewController: UIViewController {
+    weak var coordinator: AppCoordinatorProtocol?
      
     private var price = 0
     private var questionNumber = 0
@@ -12,8 +13,6 @@ final class GameViewController: UIViewController {
     private let backgroundImageView = UIImageView.commonImageView(imageName: "gameBg")
     private let logoImageView = UIImageView.commonImageView(imageName: "imageLogo")
     
-    
-
     private let questionLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title3)
@@ -44,10 +43,9 @@ final class GameViewController: UIViewController {
     private lazy var buttonC =  CustomButton(numberAnswer: "C", answer: "")
     private lazy var buttonD =  CustomButton(numberAnswer: "D", answer: "")
     
-    
-    private let cluePersonButton =  UIButton.clueButton(imageName: "cluePerson")
-    private let cluePhoneButton =  UIButton.clueButton(imageName: "cluePhone")
-    private let clue50Button =  UIButton.clueButton(imageName:  "clue50")
+    private let cluePersonButton =  ClueButton(imageName: "cluePerson")
+    private let cluePhoneButton =  ClueButton(imageName: "cluePhone")
+    private let clue50Button =  ClueButton(imageName:  "clue50")
     
     private lazy var firstLineStack: UIStackView = {
        let stack = UIStackView()
