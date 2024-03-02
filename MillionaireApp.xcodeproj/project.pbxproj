@@ -24,9 +24,13 @@
 		109A028B2B93312E000DFA7F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A02862B93312E000DFA7F /* ResultViewController.swift */; };
 		109A028C2B93312E000DFA7F /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A02882B93312E000DFA7F /* ResultModel.swift */; };
 		109A028D2B93312E000DFA7F /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A028A2B93312E000DFA7F /* ResultView.swift */; };
+		109A02912B936773000DFA7F /* ClueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A02902B936773000DFA7F /* ClueButton.swift */; };
 		5D5CE94F2B910E8600811030 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CE94E2B910E8600811030 /* QuestionModel.swift */; };
 		5D5CE9512B9115C800811030 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5CE9502B9115C700811030 /* Questions.json */; };
 		5D5CE9532B9115E400811030 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CE9522B9115E400811030 /* JsonParser.swift */; };
+		5DE02DA12B92071D00130254 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE02DA02B92071D00130254 /* GameViewController.swift */; };
+		5DE02DAA2B934F8500130254 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE02DA92B934F8400130254 /* UIColor+Extension.swift */; };
+		5DE02DAC2B9355B900130254 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE02DAB2B9355B900130254 /* CustomButton.swift */; };
 		AA502A322B8E61F0006FD6B2 /* ProgressImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA502A312B8E61F0006FD6B2 /* ProgressImage.swift */; };
 		AA502A362B8E6EA8006FD6B2 /* QuestionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA502A352B8E6EA8006FD6B2 /* QuestionImageCell.swift */; };
 		AA7144122B8E1E07007247CE /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7144112B8E1E07007247CE /* ProgressViewController.swift */; };
@@ -56,9 +60,13 @@
 		109A02862B93312E000DFA7F /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		109A02882B93312E000DFA7F /* ResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		109A028A2B93312E000DFA7F /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		109A02902B936773000DFA7F /* ClueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueButton.swift; sourceTree = "<group>"; };
 		5D5CE94E2B910E8600811030 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		5D5CE9502B9115C700811030 /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
 		5D5CE9522B9115E400811030 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
+		5DE02DA02B92071D00130254 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5DE02DA92B934F8400130254 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5DE02DAB2B9355B900130254 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		AA502A312B8E61F0006FD6B2 /* ProgressImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressImage.swift; sourceTree = "<group>"; };
 		AA502A352B8E6EA8006FD6B2 /* QuestionImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionImageCell.swift; sourceTree = "<group>"; };
 		AA7144112B8E1E07007247CE /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 				102249032B8BA54200F99D84 /* Closure+Block.swift */,
 				AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */,
 				AAA055CB2B90B69E001E554F /* UICollectionViewCell+Extension.swift */,
+				5DE02DA92B934F8400130254 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 				AA7144102B8E1DD8007247CE /* Progress */,
 				103E9A4B2B922CC20033EE7F /* Rules */,
 				109A02842B93312E000DFA7F /* Result */,
+				5DE02DA22B92072200130254 /* GamePage */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -225,6 +235,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		109A028E2B936681000DFA7F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5DE02DAB2B9355B900130254 /* CustomButton.swift */,
+				109A02902B936773000DFA7F /* ClueButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		5D5CE9492B910E2800811030 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +259,15 @@
 				5D5CE9502B9115C700811030 /* Questions.json */,
 			);
 			path = DataService;
+			sourceTree = "<group>";
+		};
+		5DE02DA22B92072200130254 /* GamePage */ = {
+			isa = PBXGroup;
+			children = (
+				5DE02DA02B92071D00130254 /* GameViewController.swift */,
+				109A028E2B936681000DFA7F /* Views */,
+			);
+			path = GamePage;
 			sourceTree = "<group>";
 		};
 		AA502A332B8E6B5F006FD6B2 /* View */ = {
@@ -377,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				109A02912B936773000DFA7F /* ClueButton.swift in Sources */,
 				AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */,
 				103E9A502B922CC20033EE7F /* Rules.swift in Sources */,
 				5D5CE9532B9115E400811030 /* JsonParser.swift in Sources */,
@@ -386,6 +415,7 @@
 				AA7144122B8E1E07007247CE /* ProgressViewController.swift in Sources */,
 				AA502A322B8E61F0006FD6B2 /* ProgressImage.swift in Sources */,
 				10869E7E2B8B9EFA0018D0E9 /* AppDelegate.swift in Sources */,
+				5DE02DAA2B934F8500130254 /* UIColor+Extension.swift in Sources */,
 				103E9A422B9118D80033EE7F /* AppCoordinator.swift in Sources */,
 				10869E802B8B9EFA0018D0E9 /* SceneDelegate.swift in Sources */,
 				103E9A4F2B922CC20033EE7F /* RulesViewController.swift in Sources */,
@@ -396,6 +426,8 @@
 				109A028D2B93312E000DFA7F /* ResultView.swift in Sources */,
 				1041F1682B8E8C05009F271C /* PreviewSwiftUI.swift in Sources */,
 				109A028B2B93312E000DFA7F /* ResultViewController.swift in Sources */,
+				5DE02DAC2B9355B900130254 /* CustomButton.swift in Sources */,
+				5DE02DA12B92071D00130254 /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

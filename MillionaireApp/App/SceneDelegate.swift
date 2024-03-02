@@ -15,6 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = .firstBackground
+        backgroundImage.contentMode = .scaleAspectFill
+
         let navigationController = UINavigationController()
         appCoordinator = AppCoordinator(navigation: navigationController)
         
@@ -22,6 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
+        
+        window?.addSubview(backgroundImage)
+        window?.sendSubviewToBack(backgroundImage)
         
         appCoordinator?.start()
         window?.makeKeyAndVisible()
