@@ -5,6 +5,7 @@ import UIKit
 protocol AppCoordinatorProtocol: AnyObject {
     func start()
     func showRulesScreen()
+    func showResultScreen(with result: Int)
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -24,5 +25,11 @@ class AppCoordinator: AppCoordinatorProtocol {
     func showRulesScreen() {
         let rulesViewController = RulesViewController()
         navigation.present(rulesViewController, animated: true)
+    }
+    
+    func showResultScreen(with result: Int) {
+        let viewController = ResultViewController(result: result)
+        viewController.coordinator = self
+        navigation.pushViewController(viewController, animated: true)
     }
 }
