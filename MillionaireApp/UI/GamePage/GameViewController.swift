@@ -9,12 +9,12 @@ final class GameViewController: UIViewController {
     private var questionNumber = 0
     private let parser = JsonParser()
     
-    private let backgroundImageView = UIImageView.standartImageView(imageName: "gameBg")
-    private let logoImageView = UIImageView.standartImageView(imageName: "imageLogo")
+    private let backgroundImageView = UIImageView.commonImageView(imageName: "gameBg")
+    private let logoImageView = UIImageView.commonImageView(imageName: "imageLogo")
     
     
 
-    private let questionlabel: UILabel = {
+    private let questionLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title3)
         label.numberOfLines = .zero
@@ -23,7 +23,7 @@ final class GameViewController: UIViewController {
         return label
     }()
     
-    private lazy var questionNumberlabel: UILabel = {
+    private lazy var questionNumberLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title1)
         label.textColor = .white
@@ -31,7 +31,7 @@ final class GameViewController: UIViewController {
         return label
     }()
     
-    private lazy var pricelabel: UILabel = {
+    private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title1)
         label.textColor = .white
@@ -55,7 +55,7 @@ final class GameViewController: UIViewController {
         stack.axis = .horizontal
         stack.spacing = 40
         stack.addArrangedSubview(logoImageView)
-        stack.addArrangedSubview(questionlabel)
+        stack.addArrangedSubview(questionLabel)
         return stack
     }()
     
@@ -64,8 +64,8 @@ final class GameViewController: UIViewController {
         stack.alignment = .center
         stack.axis = .horizontal
         stack.spacing = 100
-        stack.addArrangedSubview(questionNumberlabel)
-        stack.addArrangedSubview(pricelabel)
+        stack.addArrangedSubview(questionNumberLabel)
+        stack.addArrangedSubview(priceLabel)
         return stack
     }()
     private lazy var informStack: UIStackView = {
@@ -101,7 +101,7 @@ final class GameViewController: UIViewController {
         return stack
     }()
     
-    private lazy var mainVerticallStack: UIStackView = {
+    private lazy var mainVerticalStack: UIStackView = {
        let stack = UIStackView()
         stack.alignment = .center
         stack.axis = .vertical
@@ -125,7 +125,7 @@ final class GameViewController: UIViewController {
     }
     
     private func setup() {
-        view.addSubviews([backgroundImageView, informStack, mainVerticallStack])
+        view.addSubviews([backgroundImageView, informStack, mainVerticalStack])
         
         backgroundImageView.snp.makeConstraints {
             $0.bottom.equalToSuperview()
@@ -142,7 +142,7 @@ final class GameViewController: UIViewController {
             $0.trailing.equalToSuperview().inset(16)
             $0.top.equalTo(70)
         }
-        mainVerticallStack.snp.makeConstraints {
+        mainVerticalStack.snp.makeConstraints {
             $0.top.equalTo(informStack.snp.bottom).offset(30)
             $0.trailing.leading.equalTo(10)
         }
@@ -150,11 +150,11 @@ final class GameViewController: UIViewController {
     
     private func getData() {
         if  let json = parser.getDataFromJsonCodable(fileName: "Questions") {
-            questionlabel.text = json.results[0].question
+            questionLabel.text = json.results[0].question
             questionNumber += 1
             price += 250
-            questionNumberlabel.text = "Вопрос \(questionNumber)"
-            pricelabel.text = "\(price) RUB"
+            questionNumberLabel.text = "Вопрос \(questionNumber)"
+            priceLabel.text = "\(price) RUB"
             
            let  answerA = json.results[0].incorrectAnswers[2]
             buttonA.reloadViews(answer: answerA)

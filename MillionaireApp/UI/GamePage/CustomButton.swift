@@ -1,10 +1,7 @@
 // MillionaireApp, 2024
 
 import UIKit
-
-private extension CGFloat {
-    static let cornerRadius = 16.0
-}
+import SnapKit
 
 class CustomButton: UIButton {
     private var numberAnswer: String
@@ -41,8 +38,8 @@ class CustomButton: UIButton {
     private func setView() {
         setTitleColor(.systemBlue, for: .highlighted)
         layer.borderColor = UIColor(hexString: "686868").cgColor
-        layer.borderWidth = 2.0
-        layer.cornerRadius = CGFloat.cornerRadius
+        layer.borderWidth = 2
+        layer.cornerRadius = 16
         
         addSubview(leftLabel)
         addSubview(rightLabel)
