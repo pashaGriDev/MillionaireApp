@@ -10,15 +10,20 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    private(set) var appCoordinator: AppCoordinatorProtocol?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let navigationController = UINavigationController(rootViewController: StartViewController())
+        let navigationController = UINavigationController()
+        appCoordinator = AppCoordinator(navigation: navigationController)
+        
+//        let viewController = ProgressViewController(currentQuestion: 6, isCorrectQuestion: true)
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
+        
+        appCoordinator?.start()
         window?.makeKeyAndVisible()
     }
 

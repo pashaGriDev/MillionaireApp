@@ -1,0 +1,185 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "In Black Hammer, what dimension does Colonel Weird travel through?",
+      "correct_answer": "Para-Zone",
+      "incorrect_answers": [
+        "Hyperspace",
+        "Mirror Universe",
+        "Phantom Zone"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "In Calvin and Hobbes, what is the name of the babysitter&#039;s boyfriend?",
+      "correct_answer": "Charlie",
+      "incorrect_answers": [
+        "Dave",
+        "Charles",
+        "Nathaniel"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Who was the first American Vampire (Scott Snyder&#039;s American Vampire)?",
+      "correct_answer": "Skinner Sweet",
+      "incorrect_answers": [
+        "Hattie Hargrove",
+        "Pearl Jones",
+        "James &quot;Jim&quot; Book"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Which of the following superheros did Wonder Woman NOT have a love interest in?",
+      "correct_answer": "Green Arrow",
+      "incorrect_answers": [
+        "Superman",
+        "Batman",
+        "Steve Trevor"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Who is the second person to take up the mantle of Night Owl in the Watchmen graphic novel?",
+      "correct_answer": "Daniel Dreiberg",
+      "incorrect_answers": [
+        "Nelson Gardner",
+        "Hollis Mason",
+        "Adrian Veidt"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "What is the designation given to the Marvel Cinematic Universe?",
+      "correct_answer": "Earth-199999",
+      "incorrect_answers": [
+        "Earth-616",
+        "Earth-10005",
+        "Earth-2008"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "What is Homestuck character Gamzee&#039;s last name?",
+      "correct_answer": "Makara",
+      "incorrect_answers": [
+        "Makera",
+        "Makare",
+        "Makrea"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Which &quot;Green Arrow&quot; sidekick commonly wears a baseball cap?",
+      "correct_answer": "Roy Harper",
+      "incorrect_answers": [
+        "Black Canary",
+        "Emiko Queen",
+        "Dick Grayson"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Found in the Marvel Comics fictional universe, what is the name of the nearly indestructible metal that coats Wolverine&#039;s bones and claws?",
+      "correct_answer": "Adamantium",
+      "incorrect_answers": [
+        "Titanium",
+        "Vibranium",
+        "Carbonadium"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "In the comics, which Sonic character took command of the Dark Legion after Luger&#039;s assassination?",
+      "correct_answer": "Lien-Da",
+      "incorrect_answers": [
+        "Kragok",
+        "Dimitri",
+        "Remington"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "What&#039;s the weakness of american vampires (Scott Snyder&#039;s American Vampire)?",
+      "correct_answer": "Gold",
+      "incorrect_answers": [
+        "Sunlight",
+        "Wood",
+        "Silver"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "In Bionicle, who was formerly a Av-Matoran and is now the Toa of Light?",
+      "correct_answer": "Takua",
+      "incorrect_answers": [
+        "Jaller",
+        "Vakama",
+        "Tahu"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Who created Ultron of Earth-616?",
+      "correct_answer": "Henry Pym",
+      "incorrect_answers": [
+        "Amadeus Cho",
+        "Tony Stark",
+        "Reed Richards"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "In Calvin and Hobbes, what is the name of the principal at Calvin&#039;s school?",
+      "correct_answer": "Mr. Spittle",
+      "incorrect_answers": [
+        "Mr. Boreman",
+        "Mr. Spitling",
+        "Mr. Moe"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Which Batman sidekick is the son of Talia al Ghul?",
+      "correct_answer": "Damian Wayne",
+      "incorrect_answers": [
+        "Dick Grayson",
+        "Tim Drake",
+        "Jason Todd"
+      ]
+    }
+  ]
+}

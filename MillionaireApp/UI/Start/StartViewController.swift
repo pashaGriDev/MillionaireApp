@@ -5,6 +5,8 @@ import SnapKit
 
 final class StartViewController: UIViewController {
     
+    weak var coordinator: AppCoordinatorProtocol?
+    
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .firstBackground
@@ -54,13 +56,11 @@ final class StartViewController: UIViewController {
         return button
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setupLayout()
     }
-    
     
     //MARK: layout
     
@@ -110,6 +110,6 @@ final class StartViewController: UIViewController {
     }
     
     @objc private func rulesButtonAction() {
-        //TODO: destinationVC (rules of game)
+        coordinator?.showRulesScreen()
     }
 }
