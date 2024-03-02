@@ -96,9 +96,7 @@ final class StartViewController: UIViewController {
     //MARK: Actions
     
     @objc private func startButtonAction() {
-        navigationController?.pushViewController(GameViewController(), animated: true)
-        
-        //TODO: destinationVC (start game)
+        coordinator?.showGameScreen()
     }
     
     @objc private func rulesButtonAction() {

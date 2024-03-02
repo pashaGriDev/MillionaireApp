@@ -6,6 +6,7 @@ protocol AppCoordinatorProtocol: AnyObject {
     func start()
     func showRulesScreen()
     func showResultScreen(with result: Int)
+    func showGameScreen()
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -29,6 +30,12 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func showResultScreen(with result: Int) {
         let viewController = ResultViewController(result: result)
+        viewController.coordinator = self
+        navigation.pushViewController(viewController, animated: true)
+    }
+    
+    func showGameScreen() {
+        let viewController = GameViewController()
         viewController.coordinator = self
         navigation.pushViewController(viewController, animated: true)
     }
