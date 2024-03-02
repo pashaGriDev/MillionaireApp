@@ -7,12 +7,6 @@ final class StartViewController: UIViewController {
     
     weak var coordinator: AppCoordinatorProtocol?
     
-    private let backgroundImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .firstBackground
-        return imageView
-    }()
-    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = .imageLogo
@@ -67,16 +61,12 @@ final class StartViewController: UIViewController {
     //MARK: layout
     
     private func setupLayout() {
-        view.addSubviews([backgroundImageView,
+        view.addSubviews([
                           logoImageView,
                           welcomeLabel,
                           mainLabel,
                           rulesButton,
                           startButton])
-        
-        backgroundImageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
         
         logoImageView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).inset(40)
@@ -108,6 +98,8 @@ final class StartViewController: UIViewController {
     //MARK: Actions
     
     @objc private func startButtonAction() {
+        navigationController?.pushViewController(GameViewController(), animated: true)
+        
         //TODO: destinationVC (start game)
     }
     
