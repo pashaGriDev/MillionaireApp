@@ -5,6 +5,8 @@ import SnapKit
 
 class ResultViewController: UIViewController {
     
+    weak var coordinator: AppCoordinatorProtocol?
+    
     private let result: Int
     private let customView = ResultView()
     
