@@ -143,7 +143,7 @@ final class GameViewController: UIViewController {
     }
     
     private func getData() {
-        if  let json = parser.getDataFromJsonCodable(fileName: "Questions") {
+        if  let json = parser.getDataFromJsonCodable(fileName: JsonFilenames.easy) {
             questionLabel.text = json.results[0].question
             questionNumber += 1
             price += 250
