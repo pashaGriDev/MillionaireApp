@@ -1,0 +1,185 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Video Games",
+      "question": "Which souls game was not directed by Hidetaka Miyazaki?",
+      "correct_answer": "Dark Souls 2",
+      "incorrect_answers": [
+        "Demon Souls",
+        "Dark Souls",
+        "Dark Souls 3"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Cartoon &amp; Animations",
+      "question": "What was Maggie Simpson&#039;s first canonical word, not including the Tracey Ullman shorts?",
+      "correct_answer": "Daddy.",
+      "incorrect_answers": [
+        "Sequel?",
+        "Ja!",
+        "Rusty!"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "History",
+      "question": "When was the city of Rome, Italy founded?",
+      "correct_answer": "753 BCE",
+      "incorrect_answers": [
+        "902 BCE",
+        "524 BCE",
+        "697 BCE"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Japanese Anime &amp; Manga",
+      "question": "In &quot;Highschool of the Dead&quot;, where did Komuro and Saeko establish to meet after the bus explosion?",
+      "correct_answer": "Eastern Police Station",
+      "incorrect_answers": [
+        "The Center Mall",
+        "Komuro&#039;s House",
+        "On The Main Bridge"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "History",
+      "question": "What was the code name for the Allied invasion of Southern France on August 15th, 1944?",
+      "correct_answer": "Operation Dragoon",
+      "incorrect_answers": [
+        "Operation Overlord",
+        "Operation Market Garden",
+        "Operation Torch"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Music",
+      "question": "What was the name of the rock band that Nobuo Uematsu formed that played songs from various Final Fantasy games?",
+      "correct_answer": "The Black Mages",
+      "incorrect_answers": [
+        "The Final Fantasies",
+        "The Espers",
+        "The Rock Summoners"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Geography",
+      "question": "What year is on the flag of the US state Wisconsin?",
+      "correct_answer": "1848",
+      "incorrect_answers": [
+        "1634",
+        "1783",
+        "1901"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Japanese Anime &amp; Manga",
+      "question": "In the anime, Full Metal Panic!, who is Kaname&#039;s best friend?",
+      "correct_answer": "Kyoko Tokiwa",
+      "incorrect_answers": [
+        "Melissa Mao",
+        "Ren Mikihara",
+        "Teletha &quot;Tessa&quot; Testarossa"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Sports",
+      "question": "Which female player won the gold medal of table tennis singles in 2016 Olympics Games?",
+      "correct_answer": "DING Ning (China)",
+      "incorrect_answers": [
+        "LI Xiaoxia (China)",
+        "Ai FUKUHARA (Japan)",
+        "Song KIM (North Korea)"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Video Games",
+      "question": "Which team won the &quot;Tom Clancy&#039;s Rainbow Six Siege&quot; Invitational Event February 2017 in the PC Category?",
+      "correct_answer": "Continuum",
+      "incorrect_answers": [
+        "GIFU",
+        "Santos Dexterity",
+        "eRa Eternity"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Film",
+      "question": "What was the first movie to ever use a Wilhelm Scream?",
+      "correct_answer": "Distant Drums",
+      "incorrect_answers": [
+        "Treasure of the Sierra Madre",
+        "The Charge at Feather River",
+        "Indiana Jones"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Video Games",
+      "question": "What was the code name given to Sonic the Hedgehog 4 during its development?",
+      "correct_answer": "Project Needlemouse",
+      "incorrect_answers": [
+        "Project Bluespike",
+        "Project Roboegg",
+        "Project Darksphere"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Geography",
+      "question": "Llanfair&shy;pwllgwyngyll&shy;gogery&shy;chwyrn&shy;drobwll&shy;llan&shy;tysilio&shy;gogo&shy;goch is located on which Welsh island?",
+      "correct_answer": "Anglesey",
+      "incorrect_answers": [
+        "Barry",
+        "Bardsey",
+        "Caldey"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "Entertainment: Board Games",
+      "question": "In Magic: The Gathering, what was a tribute card to Jamie Wakefield&#039;s late wife Marilyn, who loved horses?",
+      "correct_answer": "Timbermare",
+      "incorrect_answers": [
+        "Loyal Pegasus",
+        "Vryn Wingmare",
+        "Sungrace Pegasus"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "General Knowledge",
+      "question": "Which of the following languages does NOT use gender as a part of its grammar?",
+      "correct_answer": "Turkish",
+      "incorrect_answers": [
+        "German",
+        "Danish",
+        "Polish"
+      ]
+    }
+  ]
+}

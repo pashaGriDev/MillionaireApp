@@ -1,0 +1,185 @@
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Japanese Anime &amp; Manga",
+      "question": "Who is the colossal titan in &quot;Attack On Titan&quot;?",
+      "correct_answer": "Bertolt Hoover",
+      "incorrect_answers": [
+        "Reiner",
+        "Eren",
+        "Sasha"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Which of these is NOT an Australian state or territory?",
+      "correct_answer": "Alberta",
+      "incorrect_answers": [
+        "New South Wales",
+        "Victoria",
+        "Queensland"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Television",
+      "question": "In the cartoon &#039;SpongeBob SquarePants&#039;, what did the acronym E.V.I.L stand for?",
+      "correct_answer": "Every Villain Is Lemons",
+      "incorrect_answers": [
+        "Every Villain Is Lemonade",
+        "Every Villain Is Limes",
+        "Each Villain Is Lemonade"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "Ringo Starr of The Beatles mainly played what instrument?",
+      "correct_answer": "Drums",
+      "incorrect_answers": [
+        "Bass",
+        "Guitar",
+        "Piano"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "Who was the voice actor for Snake in Metal Gear Solid V: The Phantom Pain?",
+      "correct_answer": "Kiefer Sutherland",
+      "incorrect_answers": [
+        "David Hayter",
+        "Norman Reedus",
+        "Hideo Kojima"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Television",
+      "question": "In the Star Trek universe, what color is Vulcan blood?",
+      "correct_answer": "Green",
+      "incorrect_answers": [
+        "Blue",
+        "Red",
+        "Purple"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Musicals &amp; Theatres",
+      "question": "&quot;Doctor Who&quot; star David Tennant performed in a rendition of which Shakespearean play?",
+      "correct_answer": "Hamlet",
+      "incorrect_answers": [
+        "The Tempest",
+        "Othello",
+        "The Taming of the Shrew"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "Who is the main protagonist in Danganronpa 2: Goodbye Despair?",
+      "correct_answer": "Hajime Hinata",
+      "incorrect_answers": [
+        "Nagito Komaeda",
+        "Makoto Naegi",
+        "Junko Enoshima"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "What country has a horizontal bicolor red and white flag?",
+      "correct_answer": "Monaco",
+      "incorrect_answers": [
+        "Bahrain",
+        "Malta",
+        "Liechenstein"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Geography",
+      "question": "Which ocean borders the west coast of the United States?",
+      "correct_answer": "Pacific",
+      "incorrect_answers": [
+        "Atlantic",
+        "Indian",
+        "Arctic"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "History",
+      "question": "Who was the first American in space?",
+      "correct_answer": "Alan Shephard",
+      "incorrect_answers": [
+        "Neil Armstrong",
+        "John Glenn",
+        "Jim Lovell"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "In 2006, which band released their debut album &quot;A Fever You Can&#039;t Sweat Out&quot;?",
+      "correct_answer": "Panic! At the Disco",
+      "incorrect_answers": [
+        "Twenty One Pilots",
+        "My Chemical Romance",
+        "Fall Out Boy"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science: Gadgets",
+      "question": "Which of the following is not a type of computer mouse?",
+      "correct_answer": "Smoothie mouse",
+      "incorrect_answers": [
+        "Drum mouse",
+        "Trackball mouse",
+        "Optical mouse"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "In the original Spyro game who is the first villain?",
+      "correct_answer": "Gnasty Gnorc",
+      "incorrect_answers": [
+        "Ripto",
+        "Sorceress",
+        "Cynder"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Video Games",
+      "question": "The &quot;Day of Defeat&quot; series of games take place during which war?",
+      "correct_answer": "World War II",
+      "incorrect_answers": [
+        "World War I",
+        "Vietnam War",
+        "Iraq War"
+      ]
+    }
+  ]
+}

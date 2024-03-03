@@ -26,7 +26,7 @@
 		109A028D2B93312E000DFA7F /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A028A2B93312E000DFA7F /* ResultView.swift */; };
 		109A02912B936773000DFA7F /* ClueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109A02902B936773000DFA7F /* ClueButton.swift */; };
 		5D5CE94F2B910E8600811030 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CE94E2B910E8600811030 /* QuestionModel.swift */; };
-		5D5CE9512B9115C800811030 /* Questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5CE9502B9115C700811030 /* Questions.json */; };
+		5D5CE9512B9115C800811030 /* QuestionsMedium.json in Resources */ = {isa = PBXBuildFile; fileRef = 5D5CE9502B9115C700811030 /* QuestionsMedium.json */; };
 		5D5CE9532B9115E400811030 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5CE9522B9115E400811030 /* JsonParser.swift */; };
 		5DE02DA12B92071D00130254 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE02DA02B92071D00130254 /* GameViewController.swift */; };
 		5DE02DAA2B934F8500130254 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE02DA92B934F8400130254 /* UIColor+Extension.swift */; };
@@ -40,6 +40,8 @@
 		AA92B5892B8CC41A00EDDB44 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */; };
 		AA92B58B2B8D0C9000EDDB44 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */; };
 		AAA055CC2B90B69E001E554F /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA055CB2B90B69E001E554F /* UICollectionViewCell+Extension.swift */; };
+		AADC244C2B94F5EF0066F20B /* QuestionsHard.json in Resources */ = {isa = PBXBuildFile; fileRef = AADC244B2B94F5EF0066F20B /* QuestionsHard.json */; };
+		AADC244D2B94F60B0066F20B /* QuestionsEasy.json in Resources */ = {isa = PBXBuildFile; fileRef = AADC244A2B94F5660066F20B /* QuestionsEasy.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +64,7 @@
 		109A028A2B93312E000DFA7F /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		109A02902B936773000DFA7F /* ClueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueButton.swift; sourceTree = "<group>"; };
 		5D5CE94E2B910E8600811030 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
-		5D5CE9502B9115C700811030 /* Questions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Questions.json; sourceTree = "<group>"; };
+		5D5CE9502B9115C700811030 /* QuestionsMedium.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionsMedium.json; sourceTree = "<group>"; };
 		5D5CE9522B9115E400811030 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		5DE02DA02B92071D00130254 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5DE02DA92B934F8400130254 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -76,6 +78,8 @@
 		AA92B5882B8CC41A00EDDB44 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		AA92B58A2B8D0C9000EDDB44 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		AAA055CB2B90B69E001E554F /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		AADC244A2B94F5660066F20B /* QuestionsEasy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionsEasy.json; sourceTree = "<group>"; };
+		AADC244B2B94F5EF0066F20B /* QuestionsHard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionsHard.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,7 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				5D5CE9522B9115E400811030 /* JsonParser.swift */,
-				5D5CE9502B9115C700811030 /* Questions.json */,
+				AADC244A2B94F5660066F20B /* QuestionsEasy.json */,
+				5D5CE9502B9115C700811030 /* QuestionsMedium.json */,
+				AADC244B2B94F5EF0066F20B /* QuestionsHard.json */,
 			);
 			path = DataService;
 			sourceTree = "<group>";
@@ -388,9 +394,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				10869E8A2B8B9EFC0018D0E9 /* LaunchScreen.storyboard in Resources */,
-				5D5CE9512B9115C800811030 /* Questions.json in Resources */,
+				5D5CE9512B9115C800811030 /* QuestionsMedium.json in Resources */,
 				AA7B083A2B8FDF1900B4AC87 /* waitingAnswerSound.mp3 in Resources */,
+				AADC244C2B94F5EF0066F20B /* QuestionsHard.json in Resources */,
 				109A02832B93311F000DFA7F /* Syne.ttf in Resources */,
+				AADC244D2B94F60B0066F20B /* QuestionsEasy.json in Resources */,
 				109A02822B93311F000DFA7F /* Roboto-Medium.ttf in Resources */,
 				AA7B083C2B8FDF1900B4AC87 /* correctAnswerSound.mp3 in Resources */,
 				10869E872B8B9EFC0018D0E9 /* Assets.xcassets in Resources */,
