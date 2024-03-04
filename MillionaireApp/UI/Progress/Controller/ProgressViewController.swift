@@ -23,6 +23,7 @@ final class ProgressViewController: UIViewController {
     
     private let currentQuestion: Int
     private let isCorrectQuestion: Bool
+    private let money: Int
     
     private lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -44,9 +45,10 @@ final class ProgressViewController: UIViewController {
     }()
     
     
-    init(currentQuestion: Int, isCorrectQuestion: Bool) {
+    init(currentQuestion: Int, isCorrectQuestion: Bool, money: Int) {
         self.currentQuestion = currentQuestion
         self.isCorrectQuestion = isCorrectQuestion
+        self.money = money
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -113,18 +115,16 @@ final class ProgressViewController: UIViewController {
         switch isCorrectQuestion {
         case true:
             playSound(for: SoundFilenames.successSound.rawValue)
-            timer = .scheduledTimer(withTimeInterval: 5.0, repeats: false) { _ in
+            timer = .scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] _ in
                 
-                //TODO: change to coordinator
-                self.navigationController?.popViewController(animated: true)
+                self?.coordinator?.pop()
             }
             
         case false:
             playSound(for: SoundFilenames.failureSound.rawValue)
-            timer = .scheduledTimer(withTimeInterval: 5.0, repeats: false) { _ in
+            timer = .scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] _ in
                 
-                //TODO: To results screen
-                self.navigationController?.pushViewController(ResultViewController(result: self.currentQuestion), animated: true)
+                self?.coordinator?.showResultScreen(with: self?.money ?? 0)
             }
         }
     }

@@ -5,8 +5,10 @@ import UIKit
 protocol AppCoordinatorProtocol: AnyObject {
     func start()
     func showRulesScreen()
+    func showProgressScreen(questionNumber: Int, result: Bool, money: Int)
     func showResultScreen(with result: Int)
     func showGameScreen()
+    func pop()
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -28,6 +30,12 @@ class AppCoordinator: AppCoordinatorProtocol {
         navigation.present(rulesViewController, animated: true)
     }
     
+    func showProgressScreen(questionNumber: Int, result: Bool, money: Int) {
+        let viewController = ProgressViewController(currentQuestion: questionNumber, isCorrectQuestion: result, money: money)
+        viewController.coordinator = self
+        navigation.pushViewController(viewController, animated: true)
+    }
+    
     func showResultScreen(with result: Int) {
         let viewController = ResultViewController(result: result)
         viewController.coordinator = self
@@ -38,5 +46,9 @@ class AppCoordinator: AppCoordinatorProtocol {
         let viewController = GameViewController()
         viewController.coordinator = self
         navigation.pushViewController(viewController, animated: true)
+    }
+    
+    func pop() {
+        navigation.popViewController(animated: true)
     }
 }

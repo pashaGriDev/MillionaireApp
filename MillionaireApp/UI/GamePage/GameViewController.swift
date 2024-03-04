@@ -232,19 +232,16 @@ final class GameViewController: UIViewController {
 
     
     private func rightAnswerTapped() {
-        //TODO: Coordinator
-        
-        navigationController?.pushViewController(ProgressViewController(currentQuestion: questionNumber, isCorrectQuestion: true), animated: true)
-        
+        coordinator?.showProgressScreen(questionNumber: questionNumber, result: true, money: price)
+        print(price, "_price")
         _ = arrayAnswers.map({ button in
             button.highlighte(isHighlighted: false )
         })
     }
     
     private func wrongAnswerTapped() {
-        //TODO: Coordinator
-        
-        navigationController?.pushViewController(ProgressViewController(currentQuestion: questionNumber, isCorrectQuestion: false), animated: true)
+        coordinator?.showProgressScreen(questionNumber: questionNumber, result: false, money: price)
+        print(price, "_price")
     }
     
     private func findRightAnswer( by person: String, with probability: Int) {
@@ -298,7 +295,7 @@ final class GameViewController: UIViewController {
     
     private func getData() {
         
-        var fileName = defineLevelOfQuestion()
+        let fileName = defineLevelOfQuestion()
 
         if  let json = parser.getDataFromJsonCodable(fileName: fileName) {
             questionLabel.text = json.results[questionNumber].question
