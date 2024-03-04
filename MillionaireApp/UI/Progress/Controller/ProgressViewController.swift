@@ -113,18 +113,18 @@ final class ProgressViewController: UIViewController {
         switch isCorrectQuestion {
         case true:
             playSound(for: SoundFilenames.successSound.rawValue)
-            timer = .scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
+            timer = .scheduledTimer(withTimeInterval: 5.0, repeats: false) { _ in
                 
-                //TODO: Back to game
-                
+                //TODO: change to coordinator
+                self.navigationController?.popViewController(animated: true)
             }
             
         case false:
             playSound(for: SoundFilenames.failureSound.rawValue)
-            timer = .scheduledTimer(withTimeInterval: 10.0, repeats: false) { _ in
+            timer = .scheduledTimer(withTimeInterval: 5.0, repeats: false) { _ in
                 
                 //TODO: To results screen
-                
+                self.navigationController?.pushViewController(ResultViewController(result: self.currentQuestion), animated: true)
             }
         }
     }

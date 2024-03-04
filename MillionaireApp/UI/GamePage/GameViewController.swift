@@ -9,6 +9,8 @@ final class GameViewController: UIViewController {
     private var price = 0
     private var questionNumber = 0
     private let parser = JsonParser()
+    private var timer: Timer?
+    private var seconds = 30
     
     private let backgroundImageView = UIImageView(image: UIImage(named: "firstBackgroundImage"))
     
@@ -43,6 +45,15 @@ final class GameViewController: UIViewController {
         return label
     }()
     
+    private lazy var timerLabel: UILabel = {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .title1)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.text = "00:30"
+        return label
+    }()
+    
     private lazy var buttonA =  CustomButton(numberAnswer: "A", answer: "")
     private lazy var buttonB =  CustomButton(numberAnswer: "B", answer: "")
     private lazy var buttonC =  CustomButton(numberAnswer: "C", answer: "")
@@ -51,6 +62,8 @@ final class GameViewController: UIViewController {
     private let cluePersonButton =  ClueButton(imageName: "cluePerson")
     private let cluePhoneButton =  ClueButton(imageName: "cluePhone")
     private let clue50Button =  ClueButton(imageName:  "clue50")
+    
+    private lazy var arrayAnswers = [buttonA, buttonB, buttonC, buttonD]
     
     private lazy var secondLineStack: UIStackView = {
        let stack = UIStackView()
@@ -98,7 +111,13 @@ final class GameViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         setup()
+        addActions()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setAnswersButtons()
         getData()
+        startTimer()
     }
     
     override func viewDidLayoutSubviews() {
@@ -108,31 +127,65 @@ final class GameViewController: UIViewController {
         buttonD.applyGradient()
     }
     
+    @objc func updateTimer() {
+        seconds -= 1
+        timerLabel.text = "00:\(seconds)"
+          
+        if seconds == 0 {
+            stopTimer()
+            wrongAnswerTapped()
+        }
+      }
+    
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        seconds = 30
+        timerLabel.isHidden = false
+    }
+    
+    private func stopTimer() {
+        timer?.invalidate()
+        timerLabel.isHidden = true
+        timerLabel.text = "00:30"
+       }
+    
+    private func setAnswersButtons() {
+        _ = arrayAnswers.map { button in
+            button.isEnabled = true
+            button.showText()
+            button.tag = 0
+        }
+    }
+    
     private func setup() {
         view.addSubviews([
-            backgroundImageView,logoImageView, questionLabel, secondLineStack, mainVerticalStack
+            backgroundImageView,logoImageView, questionLabel, timerLabel, secondLineStack, mainVerticalStack
         ])
         
         backgroundImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
         
-        logoImageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-            make.centerX.equalToSuperview()
-            make.height.width.equalTo(50)
+        logoImageView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+            $0.centerX.equalToSuperview()
+            $0.height.width.equalTo(50)
         }
         
-        questionLabel.snp.makeConstraints { make in
-            make.top.equalTo(logoImageView.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(20)
-            make.height.greaterThanOrEqualTo(150).priority(.high)
+        questionLabel.snp.makeConstraints {
+            $0.top.equalTo(logoImageView.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.greaterThanOrEqualTo(100).priority(.high)
         }
         
-        secondLineStack.snp.makeConstraints { make in
-            make.top.equalTo(questionLabel.snp.bottom).offset(10)
-            make.height.equalTo(100)
-            make.leading.trailing.equalToSuperview().inset(20)
+        timerLabel.snp.makeConstraints {
+            $0.top.equalTo(questionLabel.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(20)
+        }
+        
+        secondLineStack.snp.makeConstraints {
+            $0.top.equalTo(timerLabel.snp.bottom).offset(30)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         
         mainVerticalStack.snp.makeConstraints {
@@ -142,22 +195,134 @@ final class GameViewController: UIViewController {
         }
     }
     
+    private func addActions() {
+        for i in arrayAnswers {
+            i.addAction(UIAction { _ in
+                i.isEnabled = false
+                i.highlighte(isHighlighted: true)
+                self.stopTimer()
+                if i.tag == 1 {
+                    self.rightAnswerTapped()
+                } else {
+                    self.wrongAnswerTapped()
+                }
+            }, for: .touchUpInside)
+        }
+        
+        clue50Button.addAction(UIAction { _ in
+            _ = self.arrayAnswers.map({ button in
+                if button.tag != 2 &&  button.tag != 1 {
+                    button.hideText()
+                }
+                self.clue50Button.isEnabled = false
+                
+            })
+        }, for: .touchUpInside)
+        
+        cluePersonButton.addAction(UIAction { _ in
+            self.findRightAnswer(by: "Зал", with: 7)
+            self.cluePersonButton.isEnabled = false
+        }, for: .touchUpInside)
+        
+        cluePhoneButton.addAction(UIAction { _ in
+            self.findRightAnswer(by: "Друг", with: 8)
+            self.cluePhoneButton.isEnabled = false
+        }, for: .touchUpInside)
+    }
+
+    
+    private func rightAnswerTapped() {
+        //TODO: Coordinator
+        
+        navigationController?.pushViewController(ProgressViewController(currentQuestion: questionNumber, isCorrectQuestion: true), animated: true)
+        
+        _ = arrayAnswers.map({ button in
+            button.highlighte(isHighlighted: false )
+        })
+    }
+    
+    private func wrongAnswerTapped() {
+        //TODO: Coordinator
+        
+        navigationController?.pushViewController(ProgressViewController(currentQuestion: questionNumber, isCorrectQuestion: false), animated: true)
+    }
+    
+    private func findRightAnswer( by person: String, with probability: Int) {
+        let result = Int.random(in: 1...10)
+        var answer = ""
+        
+        if result < probability {
+            _ = arrayAnswers.map { button in
+                if button.tag == 1 {
+                    answer = button.leftLabel.text ?? String()
+                }
+            }
+        } else {
+            _ = arrayAnswers.map { button in
+                if button.tag == 1 {
+                    answer = button.leftLabel.text ?? String()
+                }
+            }
+        }
+        showAlert(answer: answer, by: "\(person)")
+    }
+    
+    private func showAlert(answer: String, by person: String) {
+        let alert = UIAlertController(title: "\(person) считает, что правильный ответ:", message: "\(answer)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
+    private func calculatePrice() {
+        switch price {
+        case let x where x == 0: price = 100
+        case let x where x == 200: price = 300
+        case let x where x == 300: price = 500
+        case let x where x == 64000: price = 125000
+        default: price *= 2
+        }
+    }
+    
+    private func defineLevelOfQuestion() -> JsonFilenames {
+        var fileName: JsonFilenames
+        
+        switch price {
+        case let x where x < 1000: fileName = .easy
+        case let x where x > 1000 && x < 32000: fileName = .medium
+        case let x where x > 32000: fileName = .hard
+        default: fileName = .easy
+        }
+        return fileName
+    }
+    
     private func getData() {
-        if  let json = parser.getDataFromJsonCodable(fileName: JsonFilenames.easy) {
-            questionLabel.text = json.results[0].question
-            questionNumber += 1
-            price += 250
-            questionNumberLabel.text = "Вопрос \(questionNumber)"
+        
+        var fileName = defineLevelOfQuestion()
+
+        if  let json = parser.getDataFromJsonCodable(fileName: fileName) {
+            questionLabel.text = json.results[questionNumber].question
+            calculatePrice()
             priceLabel.text = "\(price) RUB"
             
-           let  answerA = json.results[0].incorrectAnswers[2]
-            buttonA.reloadViews(answer: answerA)
-           let  answerB = json.results[0].incorrectAnswers[2]
-            buttonB.reloadViews(answer: answerB)
-           let answerC = json.results[0].correctAnswer
-            buttonC.reloadViews(answer: answerC)
-           let answerD = json.results[0].incorrectAnswers[0]
-            buttonD.reloadViews(answer: answerD)
+            arrayAnswers.shuffle()
+            for i in arrayAnswers {
+                guard let index = arrayAnswers.firstIndex(of: i) else {return}
+                var  answer: String
+            
+                if index > 2 {
+                    answer = json.results[questionNumber].correctAnswer
+                    i.tag = 1
+                } else if index == 2 {
+                    i.tag = 2
+                    answer = json.results[questionNumber].incorrectAnswers[index]
+                } else {
+                    answer = json.results[questionNumber].incorrectAnswers[index]
+                }
+                i.reloadViews(answer: answer)
+            }
+            questionNumber += 1
+            questionNumberLabel.text = "Вопрос \(questionNumber)"
         }
     }
 }
