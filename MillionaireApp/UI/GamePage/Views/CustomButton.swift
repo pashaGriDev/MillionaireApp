@@ -7,7 +7,7 @@ class CustomButton: UIButton {
     private var numberAnswer: String
     private var answer: String
     
-    private var leftLabel: UILabel = {
+    var leftLabel: UILabel = {
         let leftLabel = UILabel()
         leftLabel.textAlignment = .center
         leftLabel.textColor = .white
@@ -19,7 +19,7 @@ class CustomButton: UIButton {
         let rightLabel = UILabel()
         rightLabel.textAlignment = .center
         rightLabel.textColor = .white
-        rightLabel.font = .preferredFont(forTextStyle: .title1)
+        rightLabel.font = .preferredFont(forTextStyle: .title3)
         return rightLabel
     }()
     
@@ -36,7 +36,7 @@ class CustomButton: UIButton {
     }
     
     private func setView() {
-        setTitleColor(.systemBlue, for: .highlighted)
+        
         layer.borderColor = UIColor(hexString: "686868").cgColor
         layer.borderWidth = 2
         layer.cornerRadius = 16
@@ -64,5 +64,24 @@ class CustomButton: UIButton {
     func reloadViews(answer: String) {
         leftLabel.text = numberAnswer
         rightLabel.text = answer
+    }
+    
+    func highlighte(isHighlighted: Bool) {
+        if isHighlighted {
+            leftLabel.textColor = .blue
+            rightLabel.textColor = .blue
+        } else {
+            leftLabel.textColor = .white
+            rightLabel.textColor = .white
+        }
+    }
+    
+    func hideText() {
+        leftLabel.isHidden = true
+        rightLabel.isHidden = true
+    }
+    func showText() {
+        leftLabel.isHidden = false
+        rightLabel.isHidden = false
     }
 }

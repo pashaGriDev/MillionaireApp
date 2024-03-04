@@ -53,6 +53,7 @@ class ResultViewController: UIViewController {
     
     @objc private func restartGame(sender: UIButton) {
         print("TRY AGAIN")
+        navigationController?.popToRootViewController(animated: true)
     }
     
     @objc private func saveResult(sender: UIButton) {

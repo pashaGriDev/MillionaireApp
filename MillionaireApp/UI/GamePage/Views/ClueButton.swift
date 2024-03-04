@@ -7,12 +7,16 @@ final class ClueButton: UIButton {
     
     private let width: CGFloat = 107
     private let height: CGFloat = 83
+    private let imageName: String
+    private lazy var originalImage: UIImage = {
+        let image = UIImage(named: imageName)
+        return image ?? UIImage()
+    }()
     
     init(imageName: String) {
+        self.imageName = imageName
         super.init(frame: .zero)
-        
-        let image = UIImage(named: imageName)
-        setImage(image, for: .normal)
+        setImage(originalImage, for: .normal)
         
         snp.makeConstraints {
             $0.width.equalTo(width)

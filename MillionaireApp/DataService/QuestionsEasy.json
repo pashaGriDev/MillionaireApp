@@ -5,7 +5,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Japanese Anime &amp; Manga",
-      "question": "Who is the colossal titan in &quot;Attack On Titan&quot;?",
+      "question": "Who is the colossal titan in Attack On Titan?",
       "correct_answer": "Bertolt Hoover",
       "incorrect_answers": [
         "Reiner",
@@ -29,7 +29,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Television",
-      "question": "In the cartoon &#039;SpongeBob SquarePants&#039;, what did the acronym E.V.I.L stand for?",
+      "question": "In the cartoon SpongeBob SquarePants, what did the acronym E.V.I.L stand for?",
       "correct_answer": "Every Villain Is Lemons",
       "incorrect_answers": [
         "Every Villain Is Lemonade",
@@ -77,7 +77,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Musicals &amp; Theatres",
-      "question": "&quot;Doctor Who&quot; star David Tennant performed in a rendition of which Shakespearean play?",
+      "question": "Doctor Who star David Tennant performed in a rendition of which Shakespearean play?",
       "correct_answer": "Hamlet",
       "incorrect_answers": [
         "The Tempest",
@@ -137,7 +137,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Music",
-      "question": "In 2006, which band released their debut album &quot;A Fever You Can&#039;t Sweat Out&quot;?",
+      "question": "In 2006, which band released their debut album A Fever You Can Sweat Out?",
       "correct_answer": "Panic! At the Disco",
       "incorrect_answers": [
         "Twenty One Pilots",
@@ -173,7 +173,7 @@
       "type": "multiple",
       "difficulty": "easy",
       "category": "Entertainment: Video Games",
-      "question": "The &quot;Day of Defeat&quot; series of games take place during which war?",
+      "question": "The Day of Defeat series of games take place during which war?",
       "correct_answer": "World War II",
       "incorrect_answers": [
         "World War I",
